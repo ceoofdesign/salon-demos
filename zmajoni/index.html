@@ -11,13 +11,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#EFF2EE;
-    --ink:#132219;
-    --muted:#566359;
-    --line:#CBD3CC;
-    --emerald:#1C5A40;
-    --emerald-2:#2A7353;
-    --amber:#E3A33A;
+    --bg:#F1EFEC;
+    --ink:#1A1716;
+    --muted:#615A56;
+    --line:#D6D0CB;
+    --emerald:#211D1C;
+    --emerald-2:#2E2927;
+    --amber:#F0562B;
+    --ember-2:#F8A13A;
     --white:#FFFFFF;
     --display:"Big Shoulders Display", "Arial Narrow", sans-serif;
     --body:"Manrope", system-ui, sans-serif;
@@ -29,38 +30,38 @@
   a:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
   .wrap{max-width:1100px;margin:0 auto;padding-left:20px;padding-right:20px}
 
-  .concept{background:var(--ink);color:#D2DBD4;font-size:14px;line-height:1.4;padding:10px 20px;text-align:center}
+  .concept{background:#0F0D0C;color:#D8D2CE;font-size:14px;line-height:1.4;padding:10px 20px;text-align:center}
   .concept strong{color:var(--white);font-weight:600}
 
   /* hero */
   .hero{background:var(--emerald);color:var(--white);padding:22px 0 0;overflow:hidden}
   .top{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px}
-  .top span{color:#BFD6C9}
+  .top span{color:#B9AFA9}
   .hero-layout{display:grid;gap:28px;grid-template-columns:1fr;padding:36px 0 44px}
   .hero-layout>*{min-width:0}
-  h1{margin:0;font:900 clamp(92px,21vw,236px)/.8 var(--display);letter-spacing:.005em;text-transform:uppercase}
+  h1{margin:0;font:900 clamp(92px,21vw,236px)/.8 var(--display);letter-spacing:.005em;text-transform:uppercase;background:linear-gradient(180deg,#FFFFFF 38%,var(--ember-2) 78%,var(--amber) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
   .tag{margin:18px 0 0;font:700 clamp(26px,3.6vw,38px)/1.1 var(--display);color:var(--amber);text-transform:uppercase;letter-spacing:.01em}
-  .lede{margin:16px 0 0;max-width:36ch;font-size:clamp(17px,2vw,20px);line-height:1.55;color:#E3EEE8}
+  .lede{margin:16px 0 0;max-width:36ch;font-size:clamp(17px,2vw,20px);line-height:1.55;color:#E9E3DF}
   .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:12px;font:700 16px/1 var(--body);text-decoration:none;border:2px solid currentColor;transition-property:scale,background-color,border-color,color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em;font-size:15px !important;font:700 16px/1 var(--body);text-decoration:none;border:2px solid currentColor;transition-property:scale,background-color,border-color,color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
   .btn:active{scale:.96}
-  .btn-amber{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+  .btn-amber{background:var(--amber);border-color:var(--amber);color:#fff}
   .btn-line{color:var(--white)}
-  @media (hover:hover){.btn-amber:hover{background:var(--white);border-color:var(--white)}.btn-line:hover{background:rgba(255,255,255,.1)}}
-  .hero-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;outline:1px solid oklch(1 0 0 / .1);outline-offset:-1px;background:var(--emerald-2)}
+  @media (hover:hover){.btn-amber:hover{background:var(--ember-2);border-color:var(--ember-2);color:var(--ink)}.btn-line:hover{background:rgba(255,255,255,.1)}}
+  .hero-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;filter:grayscale(.35) contrast(1.05);outline:1px solid oklch(1 0 0 / .1);outline-offset:-1px;background:var(--emerald-2)}
 
-  /* dragon scales band: the signature element */
-  .scales{height:56px;background-color:var(--emerald);background-image:
-      radial-gradient(circle at 50% 0,transparent 15px,var(--emerald-2) 16px,var(--emerald-2) 18px,transparent 19px),
-      radial-gradient(circle at 50% 0,transparent 15px,var(--emerald-2) 16px,var(--emerald-2) 18px,transparent 19px);
-    background-size:36px 18px;background-position:0 0,18px 9px;border-bottom:4px solid var(--amber)}
+  /* dragon claw marks: the signature element */
+  .hero-photo-wrap{position:relative}
+  .claws{position:absolute;right:-18px;top:-22px;width:58%;height:auto;pointer-events:none;filter:drop-shadow(0 6px 18px rgba(240,86,43,.35))}
+  .claws path{fill:url(#ember)}
+  .hero-base{height:10px;background:linear-gradient(90deg,var(--amber),var(--ember-2))}
 
   /* booking strip */
   .booking{background:var(--white);border-bottom:1px solid var(--line)}
   .booking .wrap{display:grid;gap:18px;grid-template-columns:1fr;padding-top:28px;padding-bottom:28px}
   .booking b{display:block;font:700 30px/1 var(--display);text-transform:uppercase}
   .booking p{margin:6px 0 0;color:var(--muted)}
-  .booking a.phone{font:900 clamp(40px,7vw,64px)/1 var(--display);color:var(--emerald);text-decoration:none;letter-spacing:.01em;align-self:center}
+  .booking a.phone{font:900 clamp(40px,7vw,64px)/1 var(--display);color:var(--amber);text-decoration:none;letter-spacing:.01em;align-self:center}
   @media (hover:hover){.booking a.phone:hover{color:var(--ink)}}
 
   /* reviews */
@@ -74,25 +75,25 @@
   .quotes figcaption{margin-top:6px;color:var(--muted);font-size:14px}
 
   section{padding:72px 0}
-  h2{margin:0 0 28px;font:900 clamp(52px,8vw,88px)/.9 var(--display);text-transform:uppercase;color:var(--emerald)}
+  h2{margin:0 0 28px;font:900 clamp(52px,8vw,88px)/.9 var(--display);text-transform:uppercase;color:var(--ink)}
 
   .services{display:grid;gap:12px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
-  .services li{background:var(--white);border-radius:16px;padding:20px 22px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;box-shadow:0 0 0 1px rgba(19,34,25,.06)}
+  .services li{background:var(--white);border-radius:4px;border-left:4px solid var(--amber);padding:20px 22px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;box-shadow:0 0 0 1px rgba(19,34,25,.06)}
   .services h3{margin:0;font:700 26px/1.05 var(--display);text-transform:uppercase}
   .services p{margin:4px 0 0;color:var(--muted);font-size:15px}
-  .price{white-space:nowrap;font-weight:700;color:var(--emerald)}
+  .price{white-space:nowrap;font-weight:700;color:var(--amber)}
   .note{margin-top:16px;color:var(--muted);font-size:14px}
 
   .gallery{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-  .gallery img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:#D7DED8}
+  .gallery img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;filter:grayscale(.35) contrast(1.05);outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:#D7DED8}
   .photo-note{margin-top:14px;color:var(--muted);font-size:14px}
 
   .visit{display:grid;gap:32px;grid-template-columns:1fr}
   address{font-style:normal;font:700 34px/1.05 var(--display);text-transform:uppercase;margin-bottom:20px}
   .hours{margin:0;padding:0;list-style:none;max-width:420px}
   .hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
-  .hours li.today{font-weight:700;color:var(--emerald)}
-  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:22px;background:#D7DED8;filter:grayscale(.3)}
+  .hours li.today{font-weight:700;color:var(--amber)}
+  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:6px;background:#D7DED8;filter:grayscale(.3)}
 
   footer{padding:36px 0 120px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
   footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
@@ -103,7 +104,7 @@
 
   @media (min-width:800px){
     .hero-layout{grid-template-columns:1.25fr .75fr;gap:56px;align-items:end;padding:44px 0 56px}
-    h1{font-size:clamp(92px,14.5vw,184px)}
+    h1{font-size:clamp(92px,13.5vw,172px)}
     .booking .wrap{grid-template-columns:1fr auto;align-items:center}
     .proof-grid{grid-template-columns:200px 1fr;align-items:start}
     .quotes{grid-template-columns:repeat(3,1fr);gap:32px}
@@ -134,10 +135,18 @@
           <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Zmajoni+Pop+Stojanova+17+Beograd">Kako do nas</a>
         </div>
       </div>
-      <img class="hero-photo" src="https://images.unsplash.com/photo-1599011176306-4a96f1516d4d?w=900&q=80&auto=format&fit=crop" alt="Frizer sređuje bradu klijentu makazama">
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1599011176306-4a96f1516d4d?w=900&q=80&auto=format&fit=crop" alt="Frizer sređuje bradu klijentu makazama">
+        <svg class="claws" viewBox="0 0 200 220" aria-hidden="true">
+          <defs><linearGradient id="ember" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8A13A"/><stop offset="1" stop-color="#F0562B"/></linearGradient></defs>
+          <path d="M150 4c6 2 7 8 4 14L58 208c-3 6-9 8-13 5 6-50 40-140 105-209z"/>
+          <path d="M186 30c6 2 7 8 4 14L104 214c-3 6-9 7-13 4 6-48 36-132 95-188z"/>
+          <path d="M112 2c6 2 7 8 4 13L22 190c-3 6-9 7-13 4 6-46 38-126 103-192z"/>
+        </svg>
+      </div>
     </div>
   </div>
-  <div class="scales" aria-hidden="true"></div>
+  <div class="hero-base" aria-hidden="true"></div>
 </header>
 
 <div class="booking">
