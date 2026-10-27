@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Infinite Beauty — koncept sajta</title>
+<meta name="description" content="Predlog sajta za kozmetički centar Infinite Beauty, Smiljanićeva 16, Vračar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F2F1F6;
+    --ink:#24213A;
+    --muted:#625E78;
+    --line:#D4D0E0;
+    --lav:#6B57A5;
+    --lav-soft:#E2DCF0;
+    --white:#FFFFFF;
+    --display:"Gloock", Georgia, serif;
+    --body:"Hanken Grotesk", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+  a{color:inherit}
+  a:focus-visible{outline:3px solid var(--lav);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1100px;margin:0 auto;padding-left:20px;padding-right:20px}
+  img{max-width:100%}
+
+  .concept{background:var(--ink);color:#D9D6E6;font-size:14px;line-height:1.4;padding:10px 20px;text-align:center}
+  .concept strong{color:var(--white);font-weight:600}
+
+  .top{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:400 22px/1 var(--display)}
+  .brand svg{width:34px;height:18px;color:var(--lav)}
+  .top-links{display:flex;gap:20px;font-size:15px;font-weight:600}
+  .top-links a{text-decoration:none}
+  @media (hover:hover){.top-links a:hover{color:var(--lav)}}
+
+  /* hero */
+  .hero{padding:28px 0 64px}
+  .hero-layout{display:grid;gap:32px;grid-template-columns:1fr}
+  .hero-layout>*{min-width:0}
+  .kicker{margin:0 0 16px;color:var(--muted);font-weight:600;font-size:15px}
+  h1{margin:0;font:400 clamp(46px,8vw,84px)/1.02 var(--display);letter-spacing:-.015em;text-wrap:balance}
+  .lede{margin:22px 0 0;max-width:38ch;font-size:clamp(18px,2vw,20px);line-height:1.55;color:var(--ink);text-wrap:pretty}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:999px;font:600 16px/1 var(--body);text-decoration:none;border:1.5px solid var(--ink);transition-property:scale,background-color,border-color,color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
+  .btn:active{scale:.96}
+  .btn-main{background:var(--lav);border-color:var(--lav);color:var(--white)}
+  .btn-ghost{background:transparent}
+  @media (hover:hover){.btn-main:hover{background:var(--ink);border-color:var(--ink)}.btn-ghost:hover{background:var(--white)}}
+  .phones{margin-top:14px;font-size:15px;color:var(--muted)}
+  .phones a{font-weight:600;color:var(--ink);text-decoration:none}
+
+  .hero-visual{position:relative}
+  .hero-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 28px 28px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:var(--lav-soft)}
+  .infinity{position:absolute;left:-6%;bottom:9%;width:78%;height:auto;color:var(--white);filter:drop-shadow(0 4px 14px rgba(36,33,58,.25));pointer-events:none}
+  .infinity path{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round}
+  @media (prefers-reduced-motion:no-preference){
+    .infinity path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s cubic-bezier(.4,0,.2,1) .4s forwards}
+    @keyframes draw{to{stroke-dashoffset:0}}
+  }
+
+  /* reviews strip */
+  .proof{background:var(--white);padding:36px 0}
+  .proof-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  .score b{display:block;font:600 52px/1 var(--body);letter-spacing:-.03em;font-variant-numeric:lining-nums}
+  .score span{color:var(--muted);font-size:15px}
+  .quotes{display:grid;gap:20px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+  .quotes figure{margin:0}
+  .quotes blockquote{margin:0;font:400 21px/1.35 var(--display)}
+  .quotes figcaption{margin-top:6px;color:var(--muted);font-size:14px}
+
+  section{padding:72px 0}
+  h2{margin:0 0 12px;font:400 clamp(36px,5.5vw,56px)/1.05 var(--display);letter-spacing:-.01em}
+  .section-intro{margin:0 0 36px;max-width:52ch;color:var(--muted);font-size:18px}
+
+  /* process */
+  .steps{display:grid;gap:16px;grid-template-columns:1fr;margin:0;padding:0;list-style:none;counter-reset:s}
+  .steps li{background:var(--white);border-radius:24px;padding:24px;counter-increment:s;box-shadow:0 0 0 1px rgba(36,33,58,.06),0 8px 24px rgba(36,33,58,.05)}
+  .steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--lav-soft);color:var(--lav);font-weight:700;margin-bottom:16px}
+  .steps h3{margin:0 0 6px;font:400 26px/1.15 var(--display)}
+  .steps p{margin:0;color:var(--muted)}
+
+  /* services */
+  .svc{display:grid;gap:20px;grid-template-columns:1fr}
+  .svc article{background:var(--white);border-radius:28px;padding:10px;box-shadow:0 0 0 1px rgba(36,33,58,.06)}
+  .svc img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:18px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:var(--lav-soft)}
+  .svc .body{padding:18px 14px 14px}
+  .svc h3{margin:0 0 10px;font:400 28px/1.1 var(--display)}
+  .svc ul{margin:0;padding:0;list-style:none}
+  .svc li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line)}
+  .svc li span:last-child{color:var(--lav);font-weight:600;white-space:nowrap}
+  .note{margin-top:20px;color:var(--muted);font-size:14px}
+
+  /* visit */
+  .visit{display:grid;gap:32px;grid-template-columns:1fr}
+  address{font-style:normal;font:400 28px/1.25 var(--display);margin:8px 0 20px}
+  .hours{margin:0;padding:0;list-style:none;max-width:420px}
+  .hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+  .hours li.today{font-weight:700;color:var(--lav)}
+  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:28px;background:var(--lav-soft);filter:grayscale(.3)}
+
+  footer{padding:36px 0 120px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+
+  .callbar{position:fixed;left:12px;right:12px;bottom:12px;display:flex;gap:8px;z-index:5}
+  .callbar a{flex:1;box-shadow:0 8px 24px rgba(36,33,58,.22)}
+  .callbar .btn-ghost{background:var(--bg)}
+
+  @media (min-width:800px){
+    .hero{padding:44px 0 88px}
+    .hero-layout{grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+    .proof-grid{grid-template-columns:180px 1fr;align-items:start}
+    .quotes{grid-template-columns:repeat(3,1fr);gap:32px}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .svc{grid-template-columns:1fr 1fr}
+    .visit{grid-template-columns:1fr 1.2fr;align-items:start}
+    .callbar{display:none}
+    footer{padding-bottom:36px}
+  }
+</style>
+</head>
+<body>
+
+<div class="concept" role="note">
+  <strong>Ovo je predlog sajta</strong> za Infinite Beauty, napravljen kao primer. Nije zvanični sajt salona.
+</div>
+
+<div class="wrap top">
+  <a class="brand" href="#">
+    <svg viewBox="0 0 68 34" aria-hidden="true"><path d="M34 17c-6-9-10-13-16-13a13 13 0 0 0 0 26c6 0 10-4 16-13s10-13 16-13a13 13 0 0 1 0 26c-6 0-10-4-16-13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+    Infinite Beauty
+  </a>
+  <nav class="top-links" aria-label="Glavni meni">
+    <a href="#usluge">Usluge</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-layout">
+    <div>
+      <p class="kicker">Kozmetički centar na Vračaru</p>
+      <h1>Prvo konsultacija. Onda tretman.</h1>
+      <p class="lede">Tretmani lica, HIFU, elektroliza, depilacija i nega ruku i nogu u Smiljanićevoj 16. Na konsultaciji zajedno procenjujemo šta je bezbedno i šta vam zaista treba.</p>
+      <div class="actions">
+        <a class="btn btn-main" href="https://ig.me/m/infinitebeauty_beograd">Zakažite konsultaciju</a>
+        <a class="btn btn-ghost" href="tel:+381641631504">Pozovite</a>
+      </div>
+      <p class="phones">Telefoni: <a href="tel:+381641631504">064 163 1504</a> i <a href="tel:+381604343744">060 434 3744</a></p>
+    </div>
+    <div class="hero-visual">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=1000&q=80&auto=format&fit=crop" alt="Kozmetičarka radi tretman lica">
+      <svg class="infinity" viewBox="0 0 200 100" aria-hidden="true"><path pathLength="1" d="M100 50c-18-27-30-38-48-38a38 38 0 0 0 0 76c18 0 30-11 48-38s30-38 48-38a38 38 0 0 1 0 76c-18 0-30-11-48-38"/></svg>
+    </div>
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap proof-grid">
+    <div class="score"><b>4,8</b><span>na Google mapama,<br>93 recenzije</span></div>
+    <ul class="quotes">
+      <li><figure><blockquote>„Pleasant atmosphere, kindness and professionalism at a high level.“</blockquote><figcaption>Google recenzija</figcaption></figure></li>
+      <li><figure><blockquote>„Kind, patient and very dedicated to her job.“</blockquote><figcaption>O Dragani, Google recenzija</figcaption></figure></li>
+      <li><figure><blockquote>„Dragana is very nice and professional.“</blockquote><figcaption>Google recenzija</figcaption></figure></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+  <section id="kako-radimo">
+    <div class="wrap">
+      <h2>Kako radimo</h2>
+      <p class="section-intro">Ne prodajemo trendove ni instant rešenja. Svaki tretman počinje razgovorom.</p>
+      <ol class="steps">
+        <li><h3>Konsultacija</h3><p>Pregledamo kožu i proverimo da li je tretman bezbedan baš za vas.</p></li>
+        <li><h3>Plan</h3><p>Biramo tretman i broj termina, bez ubeđivanja i dodatnih usluga koje vam ne trebaju.</p></li>
+        <li><h3>Tretman i nega</h3><p>Posle tretmana dobijate savete za negu kod kuće, da rezultat potraje.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="usluge" style="padding-top:0">
+    <div class="wrap">
+      <h2>Usluge</h2>
+      <p class="section-intro">Cene i trajanje tretmana dodajemo zajedno sa salonom.</p>
+      <div class="svc">
+        <article>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1761718210089-ba3bb5ccb54f?w=900&q=80&auto=format&fit=crop" alt="Tretman lica">
+          <div class="body"><h3>Lice</h3><ul>
+            <li><span>Tretmani lica</span><span>— din</span></li>
+            <li><span>Ultralift HIFU lica</span><span>— din</span></li>
+          </ul></div>
+        </article>
+        <article>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1713085085470-fba013d67e65?w=900&q=80&auto=format&fit=crop" alt="Kozmetički tretman u salonu">
+          <div class="body"><h3>Telo</h3><ul>
+            <li><span>HIFU tela</span><span>— din</span></li>
+            <li><span>Elektroliza dlake</span><span>— din</span></li>
+            <li><span>Depilacija</span><span>— din</span></li>
+          </ul></div>
+        </article>
+        <article>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1659391542239-9648f307c0b1?w=900&q=80&auto=format&fit=crop" alt="Negovani nokti posle manikira">
+          <div class="body"><h3>Ruke i noge</h3><ul>
+            <li><span>Manikir</span><span>— din</span></li>
+            <li><span>Pedikir</span><span>— din</span></li>
+          </ul></div>
+        </article>
+        <article>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?w=900&q=80&auto=format&fit=crop" alt="Tretman trepavica u salonu">
+          <div class="body"><h3>Obrve i trepavice</h3><ul>
+            <li><span>Trajna šminka obrva (powder brows)</span><span>— din</span></li>
+            <li><span>Lash i brow lift</span><span>— din</span></li>
+          </ul></div>
+        </article>
+      </div>
+      <p class="note">Fotografije su ilustrativne (Unsplash). U pravoj verziji idu fotografije salona i radovi „pre i posle“.</p>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap visit">
+      <div>
+        <h2>Gde smo</h2>
+        <address>Smiljanićeva 16<br>Vračar, Beograd</address>
+        <ul class="hours" id="hours">
+          <li data-d="1"><span>Ponedeljak</span><span>12–20</span></li>
+          <li data-d="2"><span>Utorak</span><span>12–20</span></li>
+          <li data-d="3"><span>Sreda</span><span>12–20</span></li>
+          <li data-d="4"><span>Četvrtak</span><span>12–20</span></li>
+          <li data-d="5"><span>Petak</span><span>12–20</span></li>
+          <li data-d="6"><span>Subota</span><span>10–16</span></li>
+          <li data-d="0"><span>Nedelja</span><span>zatvoreno</span></li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-main" href="https://ig.me/m/infinitebeauty_beograd">Pišite na Instagramu</a>
+        </div>
+      </div>
+      <iframe class="map" title="Mapa: Smiljanićeva 16, Beograd" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Infinite+Beauty,+Smiljani%C4%87eva+16,+Beograd&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Infinite Beauty, Smiljanićeva 16, Beograd</span>
+    <span>Predlog sajta: yar.design</span>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Brz kontakt">
+  <a class="btn btn-main" href="https://ig.me/m/infinitebeauty_beograd">Zakažite</a>
+  <a class="btn btn-ghost" href="tel:+381641631504">Pozovite</a>
+</nav>
+
+<script>
+  try{
+    var w=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Belgrade',weekday:'short'}).format(new Date());
+    var d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(w);
+    var row=document.querySelector('#hours li[data-d="'+d+'"]'); if(row) row.classList.add('today');
+  }catch(e){}
+</script>
+</body>
+</html>
