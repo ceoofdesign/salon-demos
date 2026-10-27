@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Muški frizer The Elite — koncept sajta</title>
+<meta name="description" content="Predlog sajta za muški frizerski salon The Elite, Cara Nikolaja II 56, Vračar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F4F1;
+    --ink:#16202E;
+    --muted:#5A6371;
+    --line:#CDD1D6;
+    --brass:#A9823A;
+    --open:#1E8A4C;
+    --closed:#B3362E;
+    --white:#FFFFFF;
+    --font:"Archivo", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--font);font-stretch:100%}
+  a{color:inherit}
+  a:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  .concept{background:var(--ink);color:#D5DAE1;font-size:14px;line-height:1.4;padding:10px 20px;text-align:center}
+  .concept strong{color:var(--white);font-weight:600}
+
+  /* top bar */
+  .top{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+  .brand{font-weight:800;font-stretch:125%;font-size:20px;letter-spacing:-.01em;text-decoration:none}
+  .brand span{font-weight:500;font-stretch:100%;color:var(--muted);font-size:14px;margin-left:8px}
+  .top a.ig{font-size:15px;font-weight:600}
+
+  /* hero */
+  .hero{padding:28px 0 48px}
+  .hero h1{margin:0;font-weight:800;font-stretch:62%;font-size:clamp(56px,12vw,160px);line-height:.86;letter-spacing:-.01em;overflow-wrap:anywhere}
+  .hero h1 em{font-style:normal;font-stretch:125%;font-weight:700;display:block;font-size:.42em;line-height:1.1;letter-spacing:-.02em;margin-top:.25em}
+  .hero-grid{display:grid;gap:32px;grid-template-columns:1fr;margin-top:28px}
+  .hero-grid>*{min-width:0}
+  .hero p.lede{margin:0;max-width:36ch;font-size:clamp(18px,2vw,21px);line-height:1.5;color:var(--ink)}
+
+  /* door sign */
+  .sign{align-self:start;background:var(--white);border:2px solid var(--ink);border-radius:20px;padding:22px 22px 18px;width:100%;max-width:420px;position:relative}
+  .sign::before{content:"";position:absolute;top:-16px;left:50%;width:2px;height:16px;background:var(--ink)}
+  .sign-state{display:flex;align-items:center;gap:12px;font-weight:800;font-stretch:125%;font-size:30px;line-height:1.1}
+  .dot{width:16px;height:16px;border-radius:50%;background:var(--open);flex:none;box-shadow:0 0 0 6px rgba(30,138,76,.15)}
+  .sign.is-closed .dot{background:var(--closed);box-shadow:0 0 0 6px rgba(179,54,46,.15)}
+  .sign-detail{margin:8px 0 16px;color:var(--muted);font-size:16px}
+  .sign-walkin{border-top:1px dashed var(--line);padding-top:14px;font-weight:600;font-size:16px}
+  .actions{display:grid;gap:10px;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 20px;border-radius:999px;font:600 16px/1 var(--font);text-decoration:none;border:2px solid var(--ink)}
+  .btn-main{background:var(--ink);color:var(--white)}
+  .btn-main:hover{background:var(--brass);border-color:var(--brass)}
+  .btn-ghost:hover{background:var(--bg)}
+
+  .hero-photo{display:block;width:100%;height:clamp(240px,42vw,480px);object-fit:cover;border-radius:24px;margin-top:40px;background:#DDE1E5}
+
+  /* reviews */
+  .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0}
+  .proof-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  .score b{display:block;font-weight:800;font-stretch:125%;font-size:56px;line-height:1;letter-spacing:-.03em}
+  .score span{color:var(--muted);font-size:15px}
+  .quotes{display:grid;gap:20px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+  .quotes figure{margin:0}
+  .quotes blockquote{margin:0;font-size:20px;line-height:1.4;font-weight:500}
+  .quotes figcaption{margin-top:6px;color:var(--muted);font-size:14px}
+
+  section{padding:64px 0}
+  h2{margin:0 0 24px;font-weight:800;font-stretch:62%;font-size:clamp(44px,7vw,72px);line-height:.95}
+
+  .gallery{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  .gallery figure{margin:0;overflow:hidden;border-radius:16px;background:#DDE1E5}
+  .gallery img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+  .photo-note{margin-top:14px;color:var(--muted);font-size:14px}
+
+  .services{margin:0;padding:0;list-style:none;border-top:2px solid var(--ink)}
+  .services li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .services h3{margin:0;font-weight:700;font-stretch:112%;font-size:20px}
+  .services p{margin:4px 0 0;color:var(--muted);font-size:15px;max-width:46ch}
+  .price{white-space:nowrap;font-weight:700;color:var(--brass)}
+  .note{margin-top:16px;color:var(--muted);font-size:14px}
+
+  .visit{display:grid;gap:32px;grid-template-columns:1fr}
+  address{font-style:normal;font-size:22px;line-height:1.35;font-weight:600;margin-bottom:20px}
+  .hours{margin:0;padding:0;list-style:none;max-width:420px}
+  .hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+  .hours li.today{font-weight:700}
+  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:18px;background:#DDE1E5;filter:grayscale(.4)}
+
+  footer{padding:40px 0 120px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+
+  .callbar{position:fixed;left:12px;right:12px;bottom:12px;display:flex;gap:8px;z-index:5}
+  .callbar a{flex:1;box-shadow:0 8px 24px rgba(22,32,46,.2)}
+  .callbar .btn-ghost{background:var(--bg)}
+
+  @media (min-width:760px){
+    .hero-grid{grid-template-columns:1fr 420px;align-items:start}
+    .sign{justify-self:end}
+    .proof-grid{grid-template-columns:200px 1fr;align-items:start}
+    .quotes{grid-template-columns:repeat(3,1fr);gap:32px}
+    .gallery{grid-template-columns:repeat(4,1fr);gap:16px}
+    .gallery figure:nth-child(2),.gallery figure:nth-child(4){margin-top:48px}
+    .services{columns:2;column-gap:48px;border-top:0}
+    .services li{break-inside:avoid;border-top:0}
+    .services li:nth-child(1),.services li:nth-child(4){border-top:2px solid var(--ink)}
+    .visit{grid-template-columns:1fr 1.2fr;align-items:start}
+    .callbar{display:none}
+    footer{padding-bottom:40px}
+  }
+</style>
+</head>
+<body>
+
+<div class="concept" role="note">
+  <strong>Ovo je predlog sajta</strong> za salon The Elite, napravljen kao primer. Nije zvanični sajt salona.
+</div>
+
+<div class="wrap top">
+  <a class="brand" href="#">The Elite<span>muški frizer, Vračar</span></a>
+  <a class="ig" href="https://www.instagram.com/muski_frizer_elite_vracar/">Instagram</a>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Bez zakazivanja.<em>Samo dođite.</em></h1>
+    <div class="hero-grid">
+      <div>
+        <p class="lede">Muško šišanje na Vračaru, u novom i većem prostoru u Ulici Cara Nikolaja II. Brzo, precizno i bez čekanja na termin.</p>
+      </div>
+      <aside class="sign" id="sign" aria-live="polite">
+        <div class="sign-state"><span class="dot" aria-hidden="true"></span><span id="sign-state">Radno vreme</span></div>
+        <p class="sign-detail" id="sign-detail">Pon–Pet 9–20, Subota 9–17</p>
+        <div class="sign-walkin">Ne treba zakazivati, primamo redom.</div>
+        <div class="actions">
+          <a class="btn btn-main" href="tel:+381113441830">Pozovite 011 344 1830</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Mu%C5%A1ki+frizer+The+Elite+Cara+Nikolaja+II+56+Beograd">Kako do nas</a>
+        </div>
+      </aside>
+    </div>
+    <img class="hero-photo" src="https://images.unsplash.com/photo-1790009419879-efa7801cf800?w=1600&q=80&auto=format&fit=crop" alt="Dve frizerske stolice u modernom salonu">
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap proof-grid">
+    <div class="score"><b>4,8</b><span>na Google mapama,<br>169 recenzija</span></div>
+    <ul class="quotes">
+      <li><figure><blockquote>„Fast and good haircut… yes, it’s possible!“</blockquote><figcaption>Google recenzija</figcaption></figure></li>
+      <li><figure><blockquote>„The owner is very friendly. The staff is very skillful.“</blockquote><figcaption>Vukašin, Google recenzija</figcaption></figure></li>
+      <li><figure><blockquote>„Novo mesto veće i jako lepo uređeno.“</blockquote><figcaption>Google recenzija</figcaption></figure></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+  <section id="radovi">
+    <div class="wrap">
+      <h2>Šišanja</h2>
+      <div class="gallery">
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=800&q=80&auto=format&fit=crop" alt="Frizer šiša klijenta makazama"></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1657105052497-f996284ffff8?w=800&q=80&auto=format&fit=crop" alt="Frizer stanjuje kosu makazama i češljem"></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=800&q=80&auto=format&fit=crop" alt="Muško šišanje u salonu"></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1648221122323-572c13a31663?w=800&q=80&auto=format&fit=crop" alt="Klijent na šišanju kod frizera"></figure>
+      </div>
+      <p class="photo-note">Fotografije su ilustrativne (Unsplash). U pravoj verziji ovde idu šišanja iz salona.</p>
+    </div>
+  </section>
+
+  <section id="usluge">
+    <div class="wrap">
+      <h2>Usluge</h2>
+      <ul class="services">
+        <li><div><h3>Muško šišanje</h3><p>Klasično šišanje makazama i mašinicom.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Fade</h3><p>Prelaz od kože ili od nule, po želji.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Šišanje na nulu</h3><p>Brzo i ujednačeno, mašinicom.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Šišanje makazama</h3><p>Za dužu kosu i prirodan oblik.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Pranje i stilizovanje</h3><p>Pranje kose i feniranje posle šišanja.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Dečije šišanje</h3><p>Za najmlađe klijente.</p></div><span class="price">— din</span></li>
+      </ul>
+      <p class="note">Spisak usluga i cene unosimo zajedno sa salonom.</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap visit">
+      <div>
+        <h2>Gde smo</h2>
+        <address>Cara Nikolaja II 56<br>Vračar, Beograd</address>
+        <ul class="hours" id="hours">
+          <li data-d="1"><span>Ponedeljak</span><span>9–20</span></li>
+          <li data-d="2"><span>Utorak</span><span>9–20</span></li>
+          <li data-d="3"><span>Sreda</span><span>9–20</span></li>
+          <li data-d="4"><span>Četvrtak</span><span>9–20</span></li>
+          <li data-d="5"><span>Petak</span><span>9–20</span></li>
+          <li data-d="6"><span>Subota</span><span>9–17</span></li>
+          <li data-d="0"><span>Nedelja</span><span>zatvoreno</span></li>
+        </ul>
+      </div>
+      <iframe class="map" title="Mapa: Cara Nikolaja II 56, Beograd" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Mu%C5%A1ki+frizer+The+Elite,+Cara+Nikolaja+II+56,+Beograd&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Muški frizer The Elite, Cara Nikolaja II 56, Beograd</span>
+    <span>Predlog sajta: yar.design</span>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Brz kontakt">
+  <a class="btn btn-main" href="tel:+381113441830">Pozovite</a>
+  <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Mu%C5%A1ki+frizer+The+Elite+Cara+Nikolaja+II+56+Beograd">Kako do nas</a>
+</nav>
+
+<script>
+  (function(){
+    try{
+      // [open, close] po danu; 0 = nedelja
+      var H={0:null,1:[9,20],2:[9,20],3:[9,20],4:[9,20],5:[9,20],6:[9,17]};
+      var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Belgrade',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+      var get=function(t){for(var i=0;i<parts.length;i++){if(parts[i].type===t)return parts[i].value}};
+      var day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday'));
+      var now=parseInt(get('hour'),10)+parseInt(get('minute'),10)/60;
+      var row=document.querySelector('#hours li[data-d="'+day+'"]'); if(row) row.classList.add('today');
+      var sign=document.getElementById('sign'), st=document.getElementById('sign-state'), dt=document.getElementById('sign-detail');
+      var names=['nedelju','ponedeljak','utorak','sredu','četvrtak','petak','subotu'];
+      var h=H[day];
+      if(h && now>=h[0] && now<h[1]){
+        st.textContent='Sada je otvoreno';
+        dt.textContent='Radimo danas do '+h[1]+'h. Svratite.';
+      }else{
+        sign.classList.add('is-closed');
+        st.textContent='Sada je zatvoreno';
+        var d=day, msg='';
+        if(h && now<h[0]){ msg='Otvaramo danas u '+h[0]+'h.'; }
+        else{ for(var i=1;i<=7;i++){ var nd=(day+i)%7; if(H[nd]){ msg='Otvaramo '+(i===1?'sutra':'u '+names[nd])+' u '+H[nd][0]+'h.'; break; } } }
+        dt.textContent=msg;
+      }
+    }catch(e){}
+  })();
+</script>
+</body>
+</html>
