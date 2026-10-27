@@ -57,8 +57,10 @@
 
   .hero-visual{position:relative}
   .hero-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 28px 28px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:var(--lav-soft)}
-  .infinity{position:absolute;left:-6%;bottom:9%;width:78%;height:auto;color:var(--white);filter:drop-shadow(0 4px 14px rgba(36,33,58,.25));pointer-events:none}
-  .infinity path{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round}
+  .badge{position:absolute;left:-14px;bottom:28px;display:flex;align-items:center;gap:12px;background:var(--lav);color:var(--white);border-radius:999px;padding:12px 22px 12px 16px;box-shadow:0 2px 4px rgba(36,33,58,.12),0 14px 32px rgba(107,87,165,.35);max-width:calc(100% + 14px)}
+  .badge span{font-weight:600;font-size:15px;line-height:1.25}
+  .infinity{width:64px;height:32px;flex:none}
+  .infinity path{fill:none;stroke:currentColor;stroke-width:9;stroke-linecap:round}
   @media (prefers-reduced-motion:no-preference){
     .infinity path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s cubic-bezier(.4,0,.2,1) .4s forwards}
     @keyframes draw{to{stroke-dashoffset:0}}
@@ -155,7 +157,7 @@
     </div>
     <div class="hero-visual">
       <img class="hero-photo" src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=1000&q=80&auto=format&fit=crop" alt="Kozmetičarka radi tretman lica">
-      <svg class="infinity" viewBox="0 0 200 100" aria-hidden="true"><path pathLength="1" d="M100 50c-18-27-30-38-48-38a38 38 0 0 0 0 76c18 0 30-11 48-38s30-38 48-38a38 38 0 0 1 0 76c-18 0-30-11-48-38"/></svg>
+      <div class="badge"><svg class="infinity" viewBox="0 0 200 100" aria-hidden="true"><path pathLength="1" d="M100 50c-18-27-30-38-48-38a38 38 0 0 0 0 76c18 0 30-11 48-38s30-38 48-38a38 38 0 0 1 0 76c-18 0-30-11-48-38"/></svg><span>Konsultacija pre<br>svakog tretmana</span></div>
     </div>
   </div>
 </header>
