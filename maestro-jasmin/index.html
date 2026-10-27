@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Maestro Jasmin hair artist — koncept sajta</title>
+<meta name="description" content="Predlog sajta za frizerski salon Maestro Jasmin hair artist, Zeleni venac 2, Beograd.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF0F2;
+    --ink:#191C24;
+    --dye:#6B2D5C;
+    --dye-soft:#E7DCE4;
+    --steel:#5B6170;
+    --line:#C9CDD4;
+    --white:#FFFFFF;
+    --display:"Bodoni Moda", "Didot", serif;
+    --body:"Figtree", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body)}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--dye);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* concept notice */
+  .concept{background:var(--ink);color:#D8DBE2;font-size:14px;line-height:1.4;padding:10px 20px;text-align:center}
+  .concept strong{color:var(--white);font-weight:600}
+
+  /* hero */
+  .hero{padding:56px 0 40px;overflow:hidden;text-align:center}
+  .hero-name{position:relative;display:inline-block;margin:0 auto;font:italic 500 clamp(84px,19vw,232px)/.9 var(--display);letter-spacing:-.02em;padding-right:.08em}
+  .hero-tag{margin:14px 0 0;font:500 15px/1.3 var(--body);letter-spacing:.04em;color:var(--steel)}
+  .hero-photo{display:block;width:100%;height:clamp(260px,46vw,520px);object-fit:cover;border-radius:28px;margin-top:40px;background:var(--dye-soft)}
+
+  /* gallery */
+  .gallery{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  .gallery figure{margin:0;position:relative;overflow:hidden;border-radius:18px;background:var(--dye-soft)}
+  .gallery img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+  .gallery figcaption{position:absolute;left:12px;bottom:12px;background:rgba(238,240,242,.92);padding:6px 12px;border-radius:999px;font-size:14px;font-weight:500}
+  .gallery .wide{grid-column:span 2}
+  .gallery .wide img{aspect-ratio:16/9}
+  .photo-note{margin-top:14px;color:var(--steel);font-size:14px}
+  .hero-name .top,.hero-name .bottom{display:block}
+  .hero-name .bottom{position:absolute;inset:0;color:var(--dye);clip-path:polygon(0 58%,100% 44%,100% 100%,0 100%);transform:translateX(.06em)}
+  .hero-name .top{clip-path:polygon(0 0,100% 0,100% 44%,0 58%)}
+  .cut{animation:cut 1.1s cubic-bezier(.2,.7,.1,1) .25s both}
+  @keyframes cut{from{transform:translateX(0)}to{transform:translateX(.06em)}}
+  .hero-sub{display:grid;gap:24px;margin-top:28px;justify-items:center}
+  .hero-sub p{margin:0;max-width:34ch;font-size:clamp(19px,2.2vw,23px);line-height:1.45}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;font:600 16px/1 var(--body);text-decoration:none;border:2px solid var(--ink)}
+  .btn-main{background:var(--ink);color:var(--white)}
+  .btn-main:hover{background:var(--dye);border-color:var(--dye)}
+  .btn-ghost:hover{background:var(--white)}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  /* rating strip */
+  .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0}
+  .proof-grid{display:grid;gap:28px;grid-template-columns:1fr}
+  .score{display:flex;align-items:baseline;gap:14px}
+  .score b{font:600 64px/1 var(--display)}
+  .score span{color:var(--steel);font-size:15px;line-height:1.35}
+  .quotes{display:grid;gap:20px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+  .quotes blockquote{margin:0;font:italic 400 20px/1.4 var(--display)}
+  .quotes figcaption{margin-top:6px;color:var(--steel);font-size:14px}
+
+  /* sections */
+  section{padding:64px 0}
+  h2{margin:0 0 28px;font:500 clamp(34px,5vw,48px)/1.05 var(--display)}
+  .services{display:grid;grid-template-columns:1fr;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+  .services li{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+  .services h3{margin:0;font:600 19px/1.3 var(--body)}
+  .services p{margin:4px 0 0;color:var(--steel);font-size:15px;max-width:46ch}
+  .price{white-space:nowrap;color:var(--dye);font-weight:600;font-size:15px}
+  .note{margin-top:16px;color:var(--steel);font-size:14px}
+
+  .visit{display:grid;gap:32px;grid-template-columns:1fr}
+  .hours{margin:0;padding:0;list-style:none}
+  .hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);max-width:420px}
+  .hours li.today{font-weight:600;color:var(--dye)}
+  address{font-style:normal;font-size:20px;line-height:1.4;margin-bottom:20px}
+  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:18px;background:var(--dye-soft);filter:grayscale(.35)}
+
+  footer{padding:40px 0 120px;color:var(--steel);font-size:14px;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+
+  /* sticky call bar on phones */
+  .callbar{position:fixed;left:12px;right:12px;bottom:12px;display:flex;gap:8px;z-index:5}
+  .callbar a{flex:1;justify-content:center;box-shadow:0 8px 24px rgba(25,28,36,.18)}
+  .callbar .btn-ghost{background:var(--paper)}
+
+  @media (min-width:760px){
+    .hero{padding:80px 0 56px}
+    .gallery{grid-template-columns:repeat(4,1fr);gap:16px}
+    .gallery .tall{grid-row:span 2}
+    .gallery .tall img{aspect-ratio:auto}
+    .proof-grid{grid-template-columns:220px 1fr;align-items:start}
+    .quotes{grid-template-columns:repeat(3,1fr);gap:32px}
+    .services{grid-template-columns:1fr 1fr;column-gap:48px}
+    .visit{grid-template-columns:1fr 1.2fr;align-items:start}
+    .callbar{display:none}
+    footer{padding-bottom:40px}
+  }
+  @media (prefers-reduced-motion:reduce){.cut{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="concept" role="note">
+  <strong>Ovo je predlog sajta</strong> za salon Maestro Jasmin, napravljen kao primer. Nije zvanični sajt salona.
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="hero-name" aria-label="Maestro">
+      <span class="top" aria-hidden="true">Maestro</span>
+      <span class="bottom cut" aria-hidden="true">Maestro</span>
+    </h1>
+    <p class="hero-tag">Jasmin hair artist, Beograd</p>
+    <div class="hero-sub">
+      <p>Jasmin i tim šišaju, farbaju i oblikuju kosu na Zelenom vencu, u samom centru Beograda.</p>
+      <div class="actions">
+        <a class="btn btn-main" href="tel:+38169664463">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Zakažite: 069 664 463
+        </a>
+        <a class="btn btn-ghost" href="viber://chat?number=%2B38169664463">Pišite na Viber</a>
+      </div>
+    </div>
+    <img class="hero-photo" src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=1600&q=80&auto=format&fit=crop" alt="Enterijer frizerskog salona sa okruglim ogledalima">
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap proof-grid">
+    <div class="score">
+      <b>4,9</b>
+      <span>na Google mapama,<br>213 recenzija</span>
+    </div>
+    <ul class="quotes">
+      <li><figure style="margin:0"><blockquote>„Najveći profesionalac i poznavalac posla.“</blockquote><figcaption>Mihaela, Google recenzija</figcaption></figure></li>
+      <li><figure style="margin:0"><blockquote>„Sara took such a good care of my hair.“</blockquote><figcaption>Graziella, Google recenzija</figcaption></figure></li>
+      <li><figure style="margin:0"><blockquote>„The whole family goes there.“</blockquote><figcaption>Google recenzija</figcaption></figure></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+  <section id="radovi">
+    <div class="wrap">
+      <h2>Radovi</h2>
+      <div class="gallery">
+        <figure class="tall"><img loading="lazy" src="https://images.unsplash.com/photo-1700760934268-8aa0ef52ce0a?w=900&q=80&auto=format&fit=crop" alt="Frizerka šiša klijentkinju"><figcaption>Šišanje</figcaption></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1560869713-bf165a9cfac1?w=700&q=80&auto=format&fit=crop" alt="Plava kosa posle farbanja"><figcaption>Blond</figcaption></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1785456411888-c2e842552820?w=700&q=80&auto=format&fit=crop" alt="Duga talasasta ombre kosa"><figcaption>Ombre</figcaption></figure>
+        <figure class="tall"><img loading="lazy" src="https://images.unsplash.com/photo-1647140655214-e4a2d914971f?w=900&q=80&auto=format&fit=crop" alt="Muško šišanje makazama"><figcaption>Muško šišanje</figcaption></figure>
+        <figure class="wide"><img loading="lazy" src="https://images.unsplash.com/photo-1791714975692-3a07f7f3b861?w=1200&q=80&auto=format&fit=crop" alt="Feniranje kose u salonu"><figcaption>Feniranje</figcaption></figure>
+      </div>
+      <p class="photo-note">Fotografije su ilustrativne (Unsplash). U pravoj verziji ovde idu radovi salona.</p>
+    </div>
+  </section>
+
+  <section id="usluge">
+    <div class="wrap">
+      <h2>Usluge</h2>
+      <ul class="services">
+        <li><div><h3>Žensko šišanje</h3><p>Od krajeva do potpune promene dužine, uz savet šta vam pristaje.</p></div><span class="price">od — din</span></li>
+        <li><div><h3>Muško šišanje</h3><p>Klasično i moderno, makazama i mašinicom.</p></div><span class="price">od — din</span></li>
+        <li><div><h3>Farbanje</h3><p>Jednobojno farbanje i pokrivanje sedih.</p></div><span class="price">od — din</span></li>
+        <li><div><h3>Pramenovi i blond</h3><p>Pramenovi, balayage i posvetljivanje.</p></div><span class="price">od — din</span></li>
+        <li><div><h3>Feniranje i frizure</h3><p>Za svaki dan ili za posebnu priliku.</p></div><span class="price">od — din</span></li>
+        <li><div><h3>Nega kose</h3><p>Tretmani za oštećenu i farbanu kosu.</p></div><span class="price">od — din</span></li>
+      </ul>
+      <p class="note">Spisak usluga i cene unosimo zajedno sa salonom.</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap visit">
+      <div>
+        <h2>Dođite</h2>
+        <address>Zeleni venac 2<br>11000 Beograd</address>
+        <ul class="hours" id="hours">
+          <li data-d="1"><span>Ponedeljak</span><span>9–20</span></li>
+          <li data-d="2"><span>Utorak</span><span>9–20</span></li>
+          <li data-d="3"><span>Sreda</span><span>9–20</span></li>
+          <li data-d="4"><span>Četvrtak</span><span>9–20</span></li>
+          <li data-d="5"><span>Petak</span><span>9–20</span></li>
+          <li data-d="6"><span>Subota</span><span>9–20</span></li>
+          <li data-d="0"><span>Nedelja</span><span>zatvoreno</span></li>
+        </ul>
+      </div>
+      <iframe class="map" title="Mapa: Zeleni venac 2, Beograd" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Maestro+Jasmin+hair+artist,+Zeleni+venac+2,+Beograd&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Maestro Jasmin hair artist, Zeleni venac 2, Beograd</span>
+    <span>Predlog sajta: yar.design</span>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Brz kontakt">
+  <a class="btn btn-main" href="tel:+38169664463">Pozovite</a>
+  <a class="btn btn-ghost" href="viber://chat?number=%2B38169664463">Viber</a>
+</nav>
+
+<script>
+  try{
+    var d=new Date().getDay();
+    var row=document.querySelector('#hours li[data-d="'+d+'"]');
+    if(row) row.classList.add('today');
+  }catch(e){}
+</script>
+</body>
+</html>
