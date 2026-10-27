@@ -11,109 +11,111 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ECEEEA;
-    --ink:#1B2320;
-    --muted:#5B6661;
-    --line:#CBD1CC;
-    --night:#16201C;
-    --blond:#E2BE73;
+    --bg:#F4F4F1;
+    --ink:#10302F;
+    --muted:#55686A;
+    --line:#CFD6D4;
+    --teal:#0F4C4A;
+    --gold:#C8902E;
     --white:#FFFFFF;
     --font:"Bricolage Grotesque", system-ui, sans-serif;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--font);font-optical-sizing:auto}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--font);font-variation-settings:"opsz" 14}
   a{color:inherit}
-  a:focus-visible{outline:3px solid var(--blond);outline-offset:3px;border-radius:6px}
-  .wrap{max-width:1120px;margin:0 auto;padding-left:20px;padding-right:20px}
+  a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1100px;margin:0 auto;padding-left:20px;padding-right:20px}
 
-  .concept{background:#0E1512;color:#C9D1CD;font-size:14px;line-height:1.4;padding:10px 20px;text-align:center}
+  .concept{background:var(--ink);color:#D3DEDC;font-size:14px;line-height:1.4;padding:10px 20px;text-align:center}
   .concept strong{color:var(--white);font-weight:600}
 
-  /* dark hero */
-  .hero{background:var(--night);color:var(--white);padding-bottom:56px;overflow:hidden}
   .top{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px}
   .brand{font-weight:700;font-size:18px;text-decoration:none;letter-spacing:-.01em}
-  .brand span{color:var(--blond)}
-  .top a.ig{font-size:15px;font-weight:600;color:#D7DED9}
-  .hero-layout{display:grid;gap:32px;grid-template-columns:1fr;padding-top:24px}
-  .hero-layout>*{min-width:0}
-  .kicker{margin:0 0 14px;color:#AEB9B3;font-weight:500;font-size:15px}
-  h1{margin:0;font-weight:800;font-size:clamp(76px,17vw,200px);line-height:.82;letter-spacing:-.045em}
-  h1 .dot{color:var(--blond)}
-  .role{margin:18px 0 0;font-size:clamp(22px,3vw,30px);line-height:1.2;font-weight:600;letter-spacing:-.015em;max-width:20ch;text-wrap:balance}
-  .lede{margin:16px 0 0;max-width:40ch;color:#C3CCC7;font-size:18px}
-  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:999px;font:600 16px/1 var(--font);text-decoration:none;border:1.5px solid currentColor;transition-property:scale,background-color,color,border-color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
-  .btn:active{scale:.96}
-  .btn-blond{background:var(--blond);border-color:var(--blond);color:var(--night)}
-  .btn-line{color:var(--white)}
-  @media (hover:hover){.btn-blond:hover{background:var(--white);border-color:var(--white)}.btn-line:hover{background:rgba(255,255,255,.08)}}
+  .brand span{color:var(--muted);font-weight:500}
+  .top a.ig{font-size:15px;font-weight:600}
 
-  .portrait{position:relative}
-  .portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;outline:1px solid oklch(1 0 0 / .1);outline-offset:-1px;background:#26322D}
-  .swatch{position:absolute;right:14px;bottom:14px;display:flex;gap:6px;background:rgba(22,32,28,.82);backdrop-filter:blur(8px);border-radius:999px;padding:8px 14px 8px 8px;align-items:center;font-size:14px;font-weight:600}
-  .swatch i{display:block;width:22px;height:22px;border-radius:50%;border:2px solid var(--night)}
-  .swatch i+i{margin-left:-12px}
+  /* hero */
+  .hero{padding:24px 0 64px}
+  .hero-layout{display:grid;gap:36px;grid-template-columns:1fr}
+  .hero-layout>*{min-width:0}
+  .kicker{margin:0;font-weight:600;font-size:15px;color:var(--muted)}
+  h1{margin:6px 0 0;font-weight:800;font-size:clamp(108px,24vw,250px);line-height:.82;letter-spacing:-.055em;font-variation-settings:"opsz" 96;color:var(--teal)}
+  .lede{margin:22px 0 0;max-width:36ch;font-size:clamp(18px,2vw,21px);line-height:1.5}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:14px;font:600 16px/1 var(--font);text-decoration:none;border:2px solid var(--ink);transition-property:scale,background-color,border-color,color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
+  .btn:active{scale:.96}
+  .btn-main{background:var(--teal);border-color:var(--teal);color:var(--white)}
+  @media (hover:hover){.btn-main:hover{background:var(--ink);border-color:var(--ink)}.btn-ghost:hover{background:var(--white)}}
+
+  /* colorist swatch card: the signature element */
+  .swatch-card{margin-top:32px;display:inline-flex;align-items:stretch;gap:0;background:var(--white);border:1px solid transparent;border-radius:16px;padding:8px;box-shadow:0 0 0 1px rgba(16,48,47,.08),0 10px 28px rgba(16,48,47,.08);max-width:100%;overflow:hidden}
+  .swatch{width:34px;height:64px;border-radius:9px;margin-right:4px;flex:none;background:var(--c)}
+  .swatch:last-of-type{margin-right:0}
+  .swatch-label{display:flex;flex-direction:column;justify-content:center;padding:0 12px 0 14px;font-size:14px;line-height:1.3;color:var(--muted);min-width:0}
+  .swatch-label b{color:var(--ink);font-size:15px}
+
+  .hero-photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:#DCE3E1}
+  .hero-photo img{display:block;width:100%;height:100%;object-fit:cover;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;border-radius:28px}
+  .quote-chip{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:16px;padding:14px 16px;font-size:16px;line-height:1.35}
+  .quote-chip small{display:block;margin-top:4px;color:var(--muted);font-size:13px}
 
   /* credentials */
-  .creds{display:grid;gap:1px;grid-template-columns:1fr;margin-top:48px;background:rgba(255,255,255,.12);border-radius:20px;overflow:hidden}
-  .creds div{background:var(--night);padding:18px 20px}
-  .creds b{display:block;font-size:18px;font-weight:700;color:var(--blond)}
-  .creds span{color:#AEB9B3;font-size:15px}
+  .creds{background:var(--teal);color:var(--white);padding:28px 0}
+  .creds ul{margin:0;padding:0;list-style:none;display:grid;gap:14px;grid-template-columns:1fr}
+  .creds li{font-size:16px;line-height:1.35;color:#CFE3E1}
+  .creds b{display:block;color:var(--white);font-size:19px;font-weight:700}
 
-  /* proof */
-  .proof{padding:56px 0}
-  .proof-grid{display:grid;gap:28px;grid-template-columns:1fr;align-items:start}
-  .big-quote{margin:0;font-weight:700;font-size:clamp(34px,5vw,56px);line-height:1.02;letter-spacing:-.03em;text-wrap:balance}
-  .big-quote figcaption{margin-top:14px;font:500 15px/1.4 var(--font);letter-spacing:0;color:var(--muted)}
-  .score{display:flex;gap:14px;align-items:baseline;margin-bottom:20px}
-  .score b{font-weight:800;font-size:56px;line-height:1;letter-spacing:-.04em}
+  /* reviews */
+  .proof{padding:44px 0;border-bottom:1px solid var(--line)}
+  .proof-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  .score b{display:block;font-weight:800;font-size:56px;line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums}
   .score span{color:var(--muted);font-size:15px}
-  .quotes{margin:0;padding:0;list-style:none;display:grid;gap:16px}
-  .quotes blockquote{margin:0;font-size:18px;line-height:1.45}
-  .quotes figure{margin:0;padding-top:16px;border-top:1px solid var(--line)}
-  .quotes figcaption{margin-top:4px;color:var(--muted);font-size:14px}
+  .quotes{display:grid;gap:20px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+  .quotes figure{margin:0}
+  .quotes blockquote{margin:0;font-size:20px;line-height:1.4;font-weight:500}
+  .quotes figcaption{margin-top:6px;color:var(--muted);font-size:14px}
 
-  section{padding:64px 0}
-  h2{margin:0 0 28px;font-weight:800;font-size:clamp(40px,6vw,64px);line-height:.95;letter-spacing:-.035em}
+  section{padding:72px 0}
+  h2{margin:0 0 28px;font-weight:800;font-size:clamp(40px,6vw,64px);line-height:1;letter-spacing:-.035em;font-variation-settings:"opsz" 96}
 
   .gallery{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-  .gallery figure{margin:0;position:relative}
-  .gallery img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:#D9DDD8}
-  .gallery figcaption{margin-top:8px;font-weight:600;font-size:15px}
-  .photo-note{margin-top:16px;color:var(--muted);font-size:14px}
+  .gallery figure{margin:0;position:relative;overflow:hidden;border-radius:18px;background:#DCE3E1}
+  .gallery img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;border-radius:18px}
+  .gallery figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.94);padding:5px 12px;border-radius:999px;font-size:14px;font-weight:600}
+  .photo-note{margin-top:14px;color:var(--muted);font-size:14px}
 
-  .services{display:grid;grid-template-columns:1fr;gap:0 48px;margin:0;padding:0;list-style:none}
-  .services li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-  .services h3{margin:0;font-size:20px;font-weight:700;letter-spacing:-.01em}
-  .services p{margin:2px 0 0;color:var(--muted);font-size:15px}
-  .price{white-space:nowrap;font-weight:700}
+  .services{margin:0;padding:0;list-style:none;border-top:2px solid var(--ink)}
+  .services li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .services h3{margin:0;font-weight:700;font-size:20px}
+  .services p{margin:4px 0 0;color:var(--muted);font-size:15px;max-width:46ch}
+  .price{white-space:nowrap;font-weight:700;color:var(--gold)}
   .note{margin-top:16px;color:var(--muted);font-size:14px}
 
   .visit{display:grid;gap:32px;grid-template-columns:1fr}
-  address{font-style:normal;font-size:24px;line-height:1.3;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
-  .near{margin:0 0 20px;color:var(--muted)}
+  address{font-style:normal;font-size:24px;line-height:1.3;font-weight:700;margin-bottom:20px}
   .hours{margin:0;padding:0;list-style:none;max-width:420px}
   .hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
-  .hours li.today{font-weight:700}
-  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:24px;background:#D9DDD8;filter:grayscale(.4)}
+  .hours li.today{font-weight:700;color:var(--teal)}
+  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:24px;background:#DCE3E1;filter:grayscale(.3)}
 
   footer{padding:36px 0 120px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
   footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
 
   .callbar{position:fixed;left:12px;right:12px;bottom:12px;display:flex;gap:8px;z-index:5}
-  .callbar a{flex:1;box-shadow:0 8px 24px rgba(22,32,28,.28)}
-  .callbar .btn-line{background:var(--night)}
+  .callbar a{flex:1;box-shadow:0 8px 24px rgba(16,48,47,.22)}
+  .callbar .btn-ghost{background:var(--bg)}
 
-  @media (min-width:820px){
-    .hero{padding-bottom:72px}
-    .hero-layout{grid-template-columns:1.25fr .75fr;gap:56px;align-items:end;padding-top:40px}
-    .creds{grid-template-columns:repeat(3,1fr)}
-    .proof{padding:80px 0}
-    .proof-grid{grid-template-columns:1.2fr .8fr;gap:64px}
+  @media (min-width:800px){
+    .hero{padding:40px 0 88px}
+    .hero-layout{grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+    .creds ul{grid-template-columns:repeat(3,1fr);gap:32px}
+    .proof-grid{grid-template-columns:200px 1fr;align-items:start}
+    .quotes{grid-template-columns:repeat(3,1fr);gap:32px}
     .gallery{grid-template-columns:repeat(4,1fr);gap:16px}
-    .services{grid-template-columns:1fr 1fr}
+    .services{columns:2;column-gap:48px;border-top:0}
+    .services li{break-inside:avoid}
+    .services li:nth-child(1),.services li:nth-child(4){border-top:2px solid var(--ink)}
     .visit{grid-template-columns:1fr 1.2fr;align-items:start}
     .callbar{display:none}
     footer{padding-bottom:36px}
@@ -126,61 +128,67 @@
   <strong>Ovo je predlog sajta</strong> za studio Nice and Easy by Bane, napravljen kao primer. Nije zvanični sajt salona.
 </div>
 
+<div class="wrap top">
+  <a class="brand" href="#">Nice and Easy <span>by Bane</span></a>
+  <a class="ig" href="https://www.instagram.com/niceandeasybybane/">Instagram</a>
+</div>
+
 <header class="hero">
-  <div class="wrap top">
-    <a class="brand" href="#">Nice and Easy <span>by Bane</span></a>
-    <a class="ig" href="https://www.instagram.com/niceandeasybybane/">Instagram</a>
-  </div>
-  <div class="wrap">
-    <div class="hero-layout">
-      <div>
-        <p class="kicker">Unisex frizerski studio, Novi Beograd</p>
-        <h1>Bane<span class="dot">.</span></h1>
-        <p class="role">Frizer koji obučava druge frizere.</p>
-        <p class="lede">Branislav Benić šiša, farba i posvetljava kosu u svom studiju na Bulevaru Zorana Đinđića. Specijalnost: plava kosa i kratke frizure.</p>
-        <div class="actions">
-          <a class="btn btn-blond" href="tel:+381643025641">Zakažite: 064 302 5641</a>
-          <a class="btn btn-line" href="viber://chat?number=%2B381643025641">Viber</a>
-        </div>
+  <div class="wrap hero-layout">
+    <div>
+      <p class="kicker">Frizerski studio, Novi Beograd</p>
+      <h1>Bane.</h1>
+      <p class="lede">Branislav Benić šiša i farba žene i muškarce u svom studiju kod Arene. Ekspert za plavu kosu i edukator drugih frizera.</p>
+      <div class="actions">
+        <a class="btn btn-main" href="tel:+381643025641">Zakažite: 064 302 5641</a>
+        <a class="btn btn-ghost" href="https://ig.me/m/niceandeasybybane">Pišite na Instagramu</a>
       </div>
-      <div class="portrait">
-        <img src="https://images.unsplash.com/photo-1730573520149-7a5b97d35ccc?w=900&q=80&auto=format&fit=crop" alt="Duga plava kosa">
-        <div class="swatch" aria-hidden="true"><i style="background:#F1DDAE"></i><i style="background:#E2BE73"></i><i style="background:#B98A4B"></i>&nbsp;Blond ekspert</div>
+      <div class="swatch-card" aria-label="Paleta plavih nijansi">
+        <span class="swatch" style="--c:#F4E7C9" aria-hidden="true"></span>
+        <span class="swatch" style="--c:#E8CF9B" aria-hidden="true"></span>
+        <span class="swatch" style="--c:#D4B072" aria-hidden="true"></span>
+        <span class="swatch" style="--c:#B78B4E" aria-hidden="true"></span>
+        <span class="swatch" style="--c:#8A6236" aria-hidden="true"></span>
+        <span class="swatch-label"><b>Blond ekspert</b>Schwarzkopf</span>
       </div>
     </div>
-    <div class="creds">
-      <div><b>NIKA</b><span>Hair educator, NIKA beauty excellence Serbia</span></div>
-      <div><b>Red Cat</b><span>Master educator</span></div>
-      <div><b>Schwarzkopf</b><span>Blonde hair expert</span></div>
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1730573520149-7a5b97d35ccc?w=1000&q=80&auto=format&fit=crop" alt="Žena sa dugom plavom kosom">
+      <p class="quote-chip">„Best one for last 17 years.“<small>Goran, Google recenzija</small></p>
     </div>
   </div>
 </header>
 
+<div class="creds">
+  <div class="wrap">
+    <ul>
+      <li><b>Schwarzkopf</b>ekspert za plavu kosu</li>
+      <li><b>NIKA beauty excellence</b>edukator za kosu, Srbija</li>
+      <li><b>Red Cat</b>master edukator</li>
+    </ul>
+  </div>
+</div>
+
 <div class="proof">
   <div class="wrap proof-grid">
-    <figure class="big-quote" style="margin:0">
-      <blockquote style="margin:0">„Best one for last 17 years.“</blockquote>
-      <figcaption>Goran, Google recenzija</figcaption>
-    </figure>
-    <div>
-      <div class="score"><b>5,0</b><span>na Google mapama,<br>71 recenzija</span></div>
-      <ul class="quotes">
-        <li><figure><blockquote>„Bane made me feel so comfortable from the very beginning.“</blockquote><figcaption>Bojana, Google recenzija</figcaption></figure></li>
-        <li><figure><blockquote>„He definitely knows what he is doing. Price is also really good.“</blockquote><figcaption>Irina, Google recenzija</figcaption></figure></li>
-      </ul>
-    </div>
+    <div class="score"><b>5,0</b><span>na Google mapama,<br>71 recenzija</span></div>
+    <ul class="quotes">
+      <li><figure><blockquote>„Bane made me feel so comfortable from the very beginning.“</blockquote><figcaption>Bojana, Google recenzija</figcaption></figure></li>
+      <li><figure><blockquote>„He definitely knows what he is doing. Price is also really good.“</blockquote><figcaption>Irina, Google recenzija</figcaption></figure></li>
+      <li><figure><blockquote>„I feel lucky to have found him!“</blockquote><figcaption>Bojana, Google recenzija</figcaption></figure></li>
+    </ul>
   </div>
 </div>
 
 <main>
-  <section id="radovi" style="padding-top:0">
+  <section id="radovi">
     <div class="wrap">
       <h2>Radovi</h2>
       <div class="gallery">
-        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1560869713-bf165a9cfac1?w=700&q=80&auto=format&fit=crop" alt="Plava kosa"><figcaption>Blond</figcaption></figure>
-        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1785456283212-338f5bc44d50?w=700&q=80&auto=format&fit=crop" alt="Talasasta plava i smeđa kosa"><figcaption>Boja</figcaption></figure>
-        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1700760934268-8aa0ef52ce0a?w=700&q=80&auto=format&fit=crop" alt="Žensko šišanje makazama"><figcaption>Žensko šišanje</figcaption></figure>
-        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=700&q=80&auto=format&fit=crop" alt="Muško šišanje"><figcaption>Muško šišanje</figcaption></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1560869713-bf165a9cfac1?w=800&q=80&auto=format&fit=crop" alt="Talasasta kosa"><figcaption>Stilizovanje</figcaption></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1785456411888-c2e842552820?w=800&q=80&auto=format&fit=crop" alt="Duga ombre kosa"><figcaption>Ombre</figcaption></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1700760934268-8aa0ef52ce0a?w=800&q=80&auto=format&fit=crop" alt="Žensko šišanje makazama"><figcaption>Šišanje</figcaption></figure>
+        <figure><img loading="lazy" src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=800&q=80&auto=format&fit=crop" alt="Muško šišanje"><figcaption>Muško šišanje</figcaption></figure>
       </div>
       <p class="photo-note">Fotografije su ilustrativne (Unsplash). U pravoj verziji ovde idu Banetovi radovi.</p>
     </div>
@@ -190,12 +198,12 @@
     <div class="wrap">
       <h2>Usluge</h2>
       <ul class="services">
-        <li><div><h3>Posvetljivanje i blond</h3><p>Pramenovi, balayage i hladne plave nijanse.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Blond i posvetljivanje</h3><p>Pramenovi, balayage i hladne plave nijanse.</p></div><span class="price">— din</span></li>
         <li><div><h3>Farbanje</h3><p>Jednobojno farbanje i pokrivanje sedih.</p></div><span class="price">— din</span></li>
-        <li><div><h3>Žensko šišanje</h3><p>Kratke frizure i oblikovanje svih dužina.</p></div><span class="price">— din</span></li>
-        <li><div><h3>Muško šišanje</h3><p>Klasično i moderno.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Žensko šišanje</h3><p>Od korekcije krajeva do nove frizure.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Kratke frizure</h3><p>Precizni kratki oblici za žene.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Muško šišanje</h3><p>Klasično i moderno, makazama i mašinicom.</p></div><span class="price">— din</span></li>
         <li><div><h3>Feniranje</h3><p>Za svaki dan ili posebnu priliku.</p></div><span class="price">— din</span></li>
-        <li><div><h3>Nega kose</h3><p>Tretmani za farbanu i posvetljenu kosu.</p></div><span class="price">— din</span></li>
       </ul>
       <p class="note">Spisak usluga i cene unosimo zajedno sa studijom.</p>
     </div>
@@ -204,9 +212,8 @@
   <section id="kontakt" style="padding-top:0">
     <div class="wrap visit">
       <div>
-        <h2>Studio</h2>
-        <address>Bulevar Zorana Đinđića 73, lokal 3</address>
-        <p class="near">Novi Beograd</p>
+        <h2>Gde smo</h2>
+        <address>Bulevar Zorana Đinđića 73, lokal 3<br>Novi Beograd</address>
         <ul class="hours" id="hours">
           <li data-d="1"><span>Ponedeljak</span><span>9:30–20</span></li>
           <li data-d="2"><span>Utorak</span><span>9:30–20</span></li>
@@ -218,7 +225,7 @@
         </ul>
       </div>
       <iframe class="map" title="Mapa: Bulevar Zorana Đinđića 73, Novi Beograd" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=Nice+And+Easy+By+Bane,+Bulevar+Zorana+%C4%90in%C4%91i%C4%87a+73,+Beograd&output=embed"></iframe>
+        src="https://www.google.com/maps?q=Nice+and+Easy+by+Bane,+Bulevar+Zorana+%C4%90in%C4%91i%C4%87a+73,+Beograd&output=embed"></iframe>
     </div>
   </section>
 </main>
@@ -231,8 +238,8 @@
 </footer>
 
 <nav class="callbar" aria-label="Brz kontakt">
-  <a class="btn btn-blond" href="tel:+381643025641">Pozovite</a>
-  <a class="btn btn-line" href="viber://chat?number=%2B381643025641">Viber</a>
+  <a class="btn btn-main" href="tel:+381643025641">Pozovite</a>
+  <a class="btn btn-ghost" href="https://ig.me/m/niceandeasybybane">Instagram</a>
 </nav>
 
 <script>
