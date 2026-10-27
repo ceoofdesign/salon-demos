@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Zmajoni — koncept sajta</title>
+<meta name="description" content="Predlog sajta za muški frizerski salon Zmajoni, Pop Stojanova 17, Zvezdara.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EFF2EE;
+    --ink:#132219;
+    --muted:#566359;
+    --line:#CBD3CC;
+    --emerald:#1C5A40;
+    --emerald-2:#2A7353;
+    --amber:#E3A33A;
+    --white:#FFFFFF;
+    --display:"Big Shoulders Display", "Arial Narrow", sans-serif;
+    --body:"Manrope", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+  a{color:inherit}
+  a:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:1100px;margin:0 auto;padding-left:20px;padding-right:20px}
+
+  .concept{background:var(--ink);color:#D2DBD4;font-size:14px;line-height:1.4;padding:10px 20px;text-align:center}
+  .concept strong{color:var(--white);font-weight:600}
+
+  /* hero */
+  .hero{background:var(--emerald);color:var(--white);padding:22px 0 0;overflow:hidden}
+  .top{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px}
+  .top span{color:#BFD6C9}
+  .hero-layout{display:grid;gap:28px;grid-template-columns:1fr;padding:36px 0 44px}
+  .hero-layout>*{min-width:0}
+  h1{margin:0;font:900 clamp(92px,21vw,236px)/.8 var(--display);letter-spacing:.005em;text-transform:uppercase}
+  .tag{margin:18px 0 0;font:700 clamp(26px,3.6vw,38px)/1.1 var(--display);color:var(--amber);text-transform:uppercase;letter-spacing:.01em}
+  .lede{margin:16px 0 0;max-width:36ch;font-size:clamp(17px,2vw,20px);line-height:1.55;color:#E3EEE8}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:12px;font:700 16px/1 var(--body);text-decoration:none;border:2px solid currentColor;transition-property:scale,background-color,border-color,color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
+  .btn:active{scale:.96}
+  .btn-amber{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+  .btn-line{color:var(--white)}
+  @media (hover:hover){.btn-amber:hover{background:var(--white);border-color:var(--white)}.btn-line:hover{background:rgba(255,255,255,.1)}}
+  .hero-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;outline:1px solid oklch(1 0 0 / .1);outline-offset:-1px;background:var(--emerald-2)}
+
+  /* dragon scales band: the signature element */
+  .scales{height:56px;background-color:var(--emerald);background-image:
+      radial-gradient(circle at 50% 0,transparent 15px,var(--emerald-2) 16px,var(--emerald-2) 18px,transparent 19px),
+      radial-gradient(circle at 50% 0,transparent 15px,var(--emerald-2) 16px,var(--emerald-2) 18px,transparent 19px);
+    background-size:36px 18px;background-position:0 0,18px 9px;border-bottom:4px solid var(--amber)}
+
+  /* booking strip */
+  .booking{background:var(--white);border-bottom:1px solid var(--line)}
+  .booking .wrap{display:grid;gap:18px;grid-template-columns:1fr;padding-top:28px;padding-bottom:28px}
+  .booking b{display:block;font:700 30px/1 var(--display);text-transform:uppercase}
+  .booking p{margin:6px 0 0;color:var(--muted)}
+  .booking a.phone{font:900 clamp(40px,7vw,64px)/1 var(--display);color:var(--emerald);text-decoration:none;letter-spacing:.01em;align-self:center}
+  @media (hover:hover){.booking a.phone:hover{color:var(--ink)}}
+
+  /* reviews */
+  .proof{padding:44px 0;border-bottom:1px solid var(--line)}
+  .proof-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  .score b{display:block;font:900 64px/1 var(--display)}
+  .score span{color:var(--muted);font-size:15px}
+  .quotes{display:grid;gap:20px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+  .quotes figure{margin:0}
+  .quotes blockquote{margin:0;font-size:19px;line-height:1.45;font-weight:600}
+  .quotes figcaption{margin-top:6px;color:var(--muted);font-size:14px}
+
+  section{padding:72px 0}
+  h2{margin:0 0 28px;font:900 clamp(52px,8vw,88px)/.9 var(--display);text-transform:uppercase;color:var(--emerald)}
+
+  .services{display:grid;gap:12px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+  .services li{background:var(--white);border-radius:16px;padding:20px 22px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;box-shadow:0 0 0 1px rgba(19,34,25,.06)}
+  .services h3{margin:0;font:700 26px/1.05 var(--display);text-transform:uppercase}
+  .services p{margin:4px 0 0;color:var(--muted);font-size:15px}
+  .price{white-space:nowrap;font-weight:700;color:var(--emerald)}
+  .note{margin-top:16px;color:var(--muted);font-size:14px}
+
+  .gallery{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  .gallery img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:#D7DED8}
+  .photo-note{margin-top:14px;color:var(--muted);font-size:14px}
+
+  .visit{display:grid;gap:32px;grid-template-columns:1fr}
+  address{font-style:normal;font:700 34px/1.05 var(--display);text-transform:uppercase;margin-bottom:20px}
+  .hours{margin:0;padding:0;list-style:none;max-width:420px}
+  .hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+  .hours li.today{font-weight:700;color:var(--emerald)}
+  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:22px;background:#D7DED8;filter:grayscale(.3)}
+
+  footer{padding:36px 0 120px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+
+  .callbar{position:fixed;left:12px;right:12px;bottom:12px;display:flex;gap:8px;z-index:5}
+  .callbar a{flex:1;box-shadow:0 8px 24px rgba(19,34,25,.25)}
+  .callbar .btn-line{background:var(--emerald)}
+
+  @media (min-width:800px){
+    .hero-layout{grid-template-columns:1.25fr .75fr;gap:56px;align-items:end;padding:44px 0 56px}
+    h1{font-size:clamp(92px,14.5vw,184px)}
+    .booking .wrap{grid-template-columns:1fr auto;align-items:center}
+    .proof-grid{grid-template-columns:200px 1fr;align-items:start}
+    .quotes{grid-template-columns:repeat(3,1fr);gap:32px}
+    .services{grid-template-columns:1fr 1fr 1fr}
+    .gallery{grid-template-columns:repeat(4,1fr);gap:16px}
+    .visit{grid-template-columns:1fr 1.2fr;align-items:start}
+    .callbar{display:none}
+    footer{padding-bottom:36px}
+  }
+</style>
+</head>
+<body>
+
+<div class="concept" role="note">
+  <strong>Ovo je predlog sajta</strong> za salon Zmajoni, napravljen kao primer. Nije zvanični sajt salona.
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top"><span>Muški frizer, Zvezdara</span><a href="https://www.instagram.com/zmajoni_muski.frizer/">Instagram</a></div>
+    <div class="hero-layout">
+      <div>
+        <h1>Zmajoni</h1>
+        <p class="tag">Muški frizer u srcu Zvezdare</p>
+        <p class="lede">Fade, šišanje, brijanje i sređivanje brade u Pop Stojanovoj 17. Dobra atmosfera i frizura s kojom izlazite nasmejani.</p>
+        <div class="actions">
+          <a class="btn btn-amber" href="tel:+38163371626">Zakažite termin</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Zmajoni+Pop+Stojanova+17+Beograd">Kako do nas</a>
+        </div>
+      </div>
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1599011176306-4a96f1516d4d?w=900&q=80&auto=format&fit=crop" alt="Frizer sređuje bradu klijentu makazama">
+    </div>
+  </div>
+  <div class="scales" aria-hidden="true"></div>
+</header>
+
+<div class="booking">
+  <div class="wrap">
+    <div><b>Termin se zakazuje telefonom</b><p>Pozovite i dogovorite vreme koje vam odgovara.</p></div>
+    <a class="phone" href="tel:+38163371626">063 371 626</a>
+  </div>
+</div>
+
+<div class="proof">
+  <div class="wrap proof-grid">
+    <div class="score"><b>4,9</b><span>na Google mapama,<br>105 recenzija</span></div>
+    <ul class="quotes">
+      <li><figure><blockquote>„Best man hairdresser in town, located in heart of Zvezdara.“</blockquote><figcaption>Miloš, Google recenzija</figcaption></figure></li>
+      <li><figure><blockquote>„Nice, professional and cheerful staff, always relaxing time.“</blockquote><figcaption>Uroš, Google recenzija</figcaption></figure></li>
+      <li><figure><blockquote>„It's a pleasure to get your hair cut at this salon.“</blockquote><figcaption>Radovan, Google recenzija</figcaption></figure></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+  <section id="usluge">
+    <div class="wrap">
+      <h2>Usluge</h2>
+      <ul class="services">
+        <li><div><h3>Muško šišanje</h3><p>Makazama i mašinicom.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Fade</h3><p>Prelaz po želji, od kože ili od nule.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Sređivanje brade</h3><p>Oblikovanje i konture.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Brijanje</h3><p>Klasično brijanje britvom.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Dečije šišanje</h3><p>Za male klijente.</p></div><span class="price">— din</span></li>
+        <li><div><h3>Stilizovanje</h3><p>Frizura i preparati za kod kuće.</p></div><span class="price">— din</span></li>
+      </ul>
+      <p class="note">Spisak usluga i cene unosimo zajedno sa salonom.</p>
+    </div>
+  </section>
+
+  <section id="radovi" style="padding-top:0">
+    <div class="wrap">
+      <h2>Frizure</h2>
+      <div class="gallery">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1520338661084-680395057c93?w=700&q=80&auto=format&fit=crop" alt="Frizer šiša muškarca">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=700&q=80&auto=format&fit=crop" alt="Muško šišanje u salonu">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1640301133543-41fe25ad6450?w=700&q=80&auto=format&fit=crop" alt="Klijent na šišanju">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=700&q=80&auto=format&fit=crop" alt="Šišanje mašinicom">
+      </div>
+      <p class="photo-note">Fotografije su ilustrativne (Unsplash). U pravoj verziji ovde idu frizure iz salona.</p>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap visit">
+      <div>
+        <h2>Gde smo</h2>
+        <address>Pop Stojanova 17<br>Zvezdara, Beograd</address>
+        <ul class="hours" id="hours">
+          <li data-d="1"><span>Ponedeljak</span><span>9–15</span></li>
+          <li data-d="2"><span>Utorak</span><span>9–15</span></li>
+          <li data-d="3"><span>Sreda</span><span>9–15</span></li>
+          <li data-d="4"><span>Četvrtak</span><span>9–15</span></li>
+          <li data-d="5"><span>Petak</span><span>9–15</span></li>
+          <li data-d="6"><span>Subota</span><span>8–15</span></li>
+          <li data-d="0"><span>Nedelja</span><span>zatvoreno</span></li>
+        </ul>
+        <p class="note">Radno vreme preuzeto sa Google mapa.</p>
+      </div>
+      <iframe class="map" title="Mapa: Pop Stojanova 17, Beograd" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Zmajoni,+Pop+Stojanova+17,+Beograd&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Zmajoni, Pop Stojanova 17, Beograd</span>
+    <span>Predlog sajta: Jaroslav, CEO OF DESIGN</span>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Brz kontakt">
+  <a class="btn btn-amber" href="tel:+38163371626">Zakažite</a>
+  <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Zmajoni+Pop+Stojanova+17+Beograd">Kako do nas</a>
+</nav>
+
+<script>
+  try{
+    var w=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Belgrade',weekday:'short'}).format(new Date());
+    var d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(w);
+    var row=document.querySelector('#hours li[data-d="'+d+'"]'); if(row) row.classList.add('today');
+  }catch(e){}
+</script>
+</body>
+</html>
