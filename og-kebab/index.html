@@ -8,130 +8,138 @@
 <meta name="description" content="Predlog sajta za OG Kebab, berlinski kebab na Bulevaru kralja Aleksandra 210, Beograd.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* primitives: the brand's own red and paper beige */
-    --red-600:#D3241C; --red-700:#B01C15;
-    --paper-50:#F6EFE4; --paper-100:#EDE2D1; --paper-300:#D9C9B2;
-    --ink-600:#6A5F55; --ink-900:#1B1714;
+    /* primitives: red ink on cream paper, like the printed menu */
+    --red-600:#D42A2E; --red-700:#B42024; --red-100:#F6D9D4;
+    --paper-50:#FBF6EC; --paper-100:#F3E9D7; --paper-300:#E6D6BB;
+    --ink-900:#2A1A16;
     /* semantic */
     --color-bg:var(--paper-50);
-    --color-bg-raised:#FFFFFF;
+    --color-bg-raised:#FFFDF8;
     --color-brand:var(--red-600);
-    --color-text:var(--ink-900);
-    --color-text-muted:var(--ink-600);
+    --color-brand-hover:var(--red-700);
+    --color-text:var(--red-600);
+    --color-text-body:#5B2A24;
+    --color-text-muted:#8C5B52;
     --color-border:var(--paper-300);
-    --color-action:var(--ink-900);
-    --color-action-hover:#3A332E;
-    --display:"Oswald", "Arial Narrow", sans-serif;
-    --body:"Rubik", system-ui, sans-serif;
+    --font:"Inter Tight", system-ui, sans-serif;
+    --check:22px;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  body{margin:0;background:var(--color-bg);color:var(--color-text);font:400 1.0625rem/1.6 var(--body)}
+  body{margin:0;background:var(--color-bg);color:var(--color-text-body);font:500 1.0625rem/1.55 var(--font)}
   a{color:inherit}
-  a:focus-visible,button:focus-visible{outline:3px solid var(--color-action);outline-offset:3px;border-radius:6px}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px;border-radius:6px}
   .wrap{max-width:1120px;margin:0 auto;padding-left:20px;padding-right:20px}
   [data-lang="ru"] .sr, [data-lang="sr"] .ru{display:none}
 
+  /* checkered edge, same as the menu card */
+  .checks{height:calc(var(--check) * 2);background-color:var(--color-bg);
+    background-image:linear-gradient(45deg,var(--color-brand) 25%,transparent 25%,transparent 75%,var(--color-brand) 75%),
+                     linear-gradient(45deg,var(--color-brand) 25%,transparent 25%,transparent 75%,var(--color-brand) 75%);
+    background-size:calc(var(--check) * 2) calc(var(--check) * 2);background-position:0 0,var(--check) var(--check)}
+
   .concept{background:var(--ink-900);color:var(--paper-100);font-size:.875rem;line-height:1.4;padding:10px 20px;text-align:center}
-  .concept strong{color:#fff;font-weight:600}
+  .concept strong{color:#fff;font-weight:700}
 
   /* header */
-  .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:14px;padding-bottom:14px}
-  .badge{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
-  .badge-circle{width:52px;height:52px;border-radius:50%;background:var(--color-brand);color:#fff;display:grid;place-items:center;font:700 1.125rem/1 var(--display);letter-spacing:.02em;box-shadow:0 0 0 3px var(--color-bg),0 0 0 5px var(--color-brand)}
-  .badge-text{font:700 1.375rem/1 var(--display);text-transform:uppercase;letter-spacing:.01em}
-  .badge-text small{display:block;font:500 .6875rem/1.2 var(--body);letter-spacing:.14em;color:var(--color-text-muted);margin-top:3px}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:16px;padding-bottom:16px}
+  .stamp-sm{width:118px;height:auto;color:var(--color-brand)}
   .lang{display:inline-flex;border-radius:999px;background:var(--paper-100);padding:3px}
-  .lang button{appearance:none;border:0;background:transparent;font:600 .875rem/1 var(--body);padding:8px 12px;border-radius:999px;cursor:pointer;color:var(--color-text-muted)}
-  .lang button[aria-pressed="true"]{background:var(--color-bg-raised);color:var(--color-text);box-shadow:0 1px 2px rgba(27,23,20,.12)}
+  .lang button{appearance:none;border:0;background:transparent;font:700 .875rem/1 var(--font);padding:8px 12px;border-radius:999px;cursor:pointer;color:var(--color-text-muted)}
+  .lang button[aria-pressed="true"]{background:var(--color-bg-raised);color:var(--color-brand);box-shadow:0 1px 2px rgba(42,26,22,.12)}
 
-  /* hero: brand red block + photo */
-  .hero{display:grid;grid-template-columns:1fr;background:var(--color-brand);color:#fff}
-  .hero-text{padding:40px 20px 44px}
-  .hero h1{margin:0;font:700 clamp(3.25rem,10vw,6.5rem)/.92 var(--display);text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}
-  .hero .lede{margin:20px 0 0;max-width:36ch;font-size:1.125rem;line-height:1.55;color:#FFE9E4}
+  /* hero */
+  .hero{padding:24px 0 64px}
+  .hero-layout{display:grid;gap:36px;grid-template-columns:1fr}
+  .hero-layout>*{min-width:0}
+  .hero h1{margin:0;color:var(--color-text);font:900 clamp(3rem,8.4vw,5.75rem)/.95 var(--font);letter-spacing:-.035em;text-wrap:balance}
+  .lede{margin:20px 0 0;max-width:38ch;font-size:1.1875rem;line-height:1.5;color:var(--color-text-body)}
   .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border:0;border-radius:12px;background:var(--color-action);color:#fff;font:600 1rem/1 var(--body);text-decoration:none;transition-property:scale,background-color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border:2px solid var(--color-brand);border-radius:999px;background:var(--color-brand);color:#fff;font:800 1rem/1 var(--font);text-decoration:none;transition-property:scale,background-color,border-color,color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
   .btn:active{scale:.96}
-  .btn-light{background:#fff;color:var(--ink-900)}
-  @media (hover:hover){.btn:hover{background:var(--color-action-hover)}.btn-light:hover{background:var(--paper-100)}}
-  .hero-info{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;font-weight:500;font-size:.9375rem;color:#FFE9E4}
-  .hero-info b{color:#fff;font-weight:700}
-  .hero-photo{min-height:360px;background:var(--red-700)}
-  .hero-photo img{display:block;width:100%;height:100%;object-fit:cover}
-
-  /* checkered paper strip, straight from their food wrap */
-  .checks{height:22px;background-color:#fff;background-image:
-    linear-gradient(90deg,rgba(211,36,28,.85) 50%,transparent 50%),
-    linear-gradient(rgba(211,36,28,.85) 50%,transparent 50%);
-    background-size:22px 22px;background-blend-mode:multiply}
+  .btn-line{background:transparent;color:var(--color-brand)}
+  @media (hover:hover){.btn:hover{background:var(--color-brand-hover);border-color:var(--color-brand-hover)}.btn-line:hover{background:var(--red-100);color:var(--color-brand-hover)}}
+  .facts{display:flex;flex-wrap:wrap;gap:10px 24px;margin:28px 0 0;padding:0;list-style:none;font-weight:600;font-size:.9375rem;color:var(--color-text-muted)}
+  .facts b{color:var(--color-text);font-weight:800;font-variant-numeric:tabular-nums}
+  .hero-photo{position:relative}
+  .hero-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:var(--paper-100)}
 
   section{padding:72px 0}
-  h2{margin:0 0 10px;font:700 clamp(2.5rem,6vw,4rem)/1 var(--display);text-transform:uppercase}
+  h2{margin:0 0 8px;color:var(--color-text);font:900 clamp(2.5rem,6vw,4rem)/1 var(--font);letter-spacing:-.035em}
   .intro{margin:0 0 30px;max-width:52ch;color:var(--color-text-muted)}
 
-  /* menu */
-  .menu{display:grid;gap:14px;grid-template-columns:1fr}
-  .menu-group{background:var(--color-bg-raised);border-radius:20px;padding:22px 22px 10px;box-shadow:0 0 0 1px rgba(27,23,20,.06)}
-  .menu-group h3{margin:0 0 6px;font:700 1.5rem/1.1 var(--display);text-transform:uppercase;color:var(--color-brand)}
-  .menu-group ul{margin:0;padding:0;list-style:none}
-  .menu-group li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-top:1px dashed var(--color-border)}
-  .menu-group li:first-child{border-top:0}
-  .menu-group li span:first-child{font-weight:600}
-  .menu-group li small{display:block;font-weight:400;color:var(--color-text-muted);font-size:.875rem}
-  .price{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}
-  .new{display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;background:var(--color-brand);color:#fff;font:600 .6875rem/1.4 var(--body);letter-spacing:.05em;text-transform:uppercase;vertical-align:2px}
-  .note{margin-top:14px;color:var(--color-text-muted);font-size:.875rem}
+  /* the printed menu, rebuilt */
+  .menu-card{position:relative;background:var(--color-bg-raised);border-radius:24px;overflow:hidden;box-shadow:0 0 0 1px rgba(212,42,46,.12),0 14px 40px rgba(42,26,22,.08)}
+  .menu-card::after{content:"";position:absolute;top:0;bottom:0;right:0;width:var(--check);
+    background-image:linear-gradient(var(--color-brand) 50%,transparent 50%);background-size:var(--check) calc(var(--check) * 2)}
+  .menu-inner{display:grid;gap:8px 56px;grid-template-columns:1fr;padding:30px calc(var(--check) + 22px) 30px 24px}
+  .menu-head{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+  .menu-head svg{width:110px;height:auto;color:var(--color-brand);flex:none}
+  .cat{margin:22px 0 6px;color:var(--color-text);font:900 2.25rem/1 var(--font);letter-spacing:-.03em}
+  .cat:first-child{margin-top:0}
+  .items{margin:0;padding:0;list-style:none}
+  .items li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:7px 0;color:var(--color-text);font-weight:800;font-size:.9375rem;letter-spacing:.02em;text-transform:uppercase}
+  .items li small{display:block;font-weight:700;font-size:.625rem;letter-spacing:.06em;opacity:.8}
+  .items li .p{white-space:nowrap;font-variant-numeric:tabular-nums}
+  .items li .ru-hint{display:block;text-transform:none;letter-spacing:0;font-weight:500;font-size:.8125rem;color:var(--color-text-muted)}
+  [data-lang="sr"] .ru-hint{display:none}
 
   /* ratings */
   .ratings{display:grid;gap:14px;grid-template-columns:1fr 1fr}
-  .rating{background:var(--color-bg-raised);border-radius:20px;padding:22px;box-shadow:0 0 0 1px rgba(27,23,20,.06)}
-  .rating b{display:block;font:700 3rem/1 var(--display);font-variant-numeric:lining-nums}
+  .rating{background:var(--color-bg-raised);border-radius:20px;padding:22px;box-shadow:0 0 0 1px rgba(212,42,46,.12)}
+  .rating b{display:block;color:var(--color-text);font:900 3rem/1 var(--font);letter-spacing:-.03em;font-variant-numeric:lining-nums}
   .rating span{color:var(--color-text-muted);font-size:.9375rem}
 
   .gallery{display:grid;gap:10px;grid-template-columns:1fr 1fr}
-  .gallery img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:var(--paper-100)}
+  .gallery img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px;background:var(--paper-100)}
+  .note{margin-top:14px;color:var(--color-text-muted);font-size:.875rem}
 
   .visit{display:grid;gap:32px;grid-template-columns:1fr}
-  address{font-style:normal;font:700 2rem/1.1 var(--display);text-transform:uppercase;margin:6px 0 16px}
-  .hours-big{font-size:1.125rem}
-  .hours-big b{font-variant-numeric:tabular-nums}
-  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:20px;background:var(--paper-100)}
+  address{font-style:normal;color:var(--color-text);font:800 1.875rem/1.15 var(--font);letter-spacing:-.02em;margin:6px 0 14px}
+  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:24px;background:var(--paper-100)}
 
-  footer{padding:36px 0 120px;color:var(--color-text-muted);font-size:.875rem;border-top:1px solid var(--color-border)}
+  footer{padding:28px 0 120px;color:var(--color-text-muted);font-size:.875rem}
   footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
 
   .callbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:5}
-  .callbar .btn{width:100%;box-shadow:0 0 0 1px rgba(255,255,255,.2),0 12px 28px rgba(27,23,20,.3)}
+  .callbar .btn{width:100%;box-shadow:0 12px 28px rgba(180,32,36,.35)}
 
   @media (min-width:860px){
-    .hero{grid-template-columns:1.1fr .9fr;min-height:560px}
-    .hero-text{padding:64px 56px 64px max(20px,calc((100vw - 1120px)/2 + 20px));align-self:center}
-    .hero-photo{min-height:0}
-    .menu{grid-template-columns:repeat(3,1fr)}
+    .hero{padding:40px 0 88px}
+    .hero-layout{grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+    .menu-inner{grid-template-columns:1fr 1fr;padding:44px calc(var(--check) + 44px) 44px 44px}
+    .menu-head{grid-column:1/-1}
     .ratings{grid-template-columns:repeat(2,minmax(0,280px))}
     .gallery{grid-template-columns:repeat(4,1fr);gap:14px}
     .visit{grid-template-columns:1fr 1.2fr;align-items:start}
     .callbar{display:none}
-    footer{padding-bottom:36px}
+    footer{padding-bottom:28px}
   }
 </style>
 </head>
 <body data-lang="sr">
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="stamp" viewBox="0 0 220 120">
+    <ellipse cx="110" cy="60" rx="106" ry="56" fill="none" stroke="currentColor" stroke-width="3"/>
+    <ellipse cx="110" cy="60" rx="98" ry="48" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <text x="110" y="40" text-anchor="middle" fill="currentColor" style="font:800 11px 'Inter Tight',sans-serif;letter-spacing:2px">BELGRADE</text>
+    <text x="110" y="72" text-anchor="middle" fill="currentColor" style="font:900 34px 'Inter Tight',sans-serif;letter-spacing:-.5px">OG KEBAB</text>
+    <text x="110" y="92" text-anchor="middle" fill="currentColor" style="font:800 11px 'Inter Tight',sans-serif;letter-spacing:2px">EST. 2025</text>
+  </symbol>
+</svg>
+
 <div class="concept" role="note">
   <span class="sr"><strong>Ovo je predlog sajta</strong> za OG Kebab, napravljen kao primer. Nije zvanični sajt lokala.</span>
   <span class="ru"><strong>Это концепт сайта</strong> для OG Kebab, сделан как пример. Не официальный сайт заведения.</span>
 </div>
+<div class="checks" aria-hidden="true"></div>
 
 <div class="wrap top">
-  <a class="badge" href="#">
-    <span class="badge-circle" aria-hidden="true">OG</span>
-    <span class="badge-text">OG Kebab<small>Belgrade · est. 2025</small></span>
-  </a>
+  <a href="#" aria-label="OG Kebab Belgrade"><svg class="stamp-sm" aria-hidden="true"><use href="#stamp"/></svg></a>
   <div class="lang" role="group" aria-label="Jezik / Язык">
     <button type="button" data-set="sr" aria-pressed="true">SR</button>
     <button type="button" data-set="ru" aria-pressed="false">RU</button>
@@ -139,58 +147,71 @@
 </div>
 
 <header class="hero">
-  <div class="hero-text">
-    <h1><span class="sr">Berlinski kebab u Beogradu</span><span class="ru">Берлинский кебаб в Белграде</span></h1>
-    <p class="lede">
-      <span class="sr">Döner, dürüm, currywurst i pomfrit kao na ulicama Berlina. Na Bulevaru kralja Aleksandra 210, svaki dan do 23h.</span>
-      <span class="ru">Дёнер, дюрюм, карривурст и картошка фри, как на улицах Берлина. На Bulevar kralja Aleksandra 210, каждый день до 23:00.</span>
-    </p>
-    <div class="actions">
-      <a class="btn" href="https://wolt.com/sr/srb/belgrade/restaurant/og-kebab"><span class="sr">Naruči na Wolt-u</span><span class="ru">Заказать в Wolt</span></a>
-      <a class="btn btn-light" href="https://glovoapp.com/sr/rs/belgrade/stores/og-kebab-beg"><span class="sr">Naruči na Glovo-u</span><span class="ru">Заказать в Glovo</span></a>
+  <div class="wrap hero-layout">
+    <div>
+      <h1><span class="sr">Berlinski kebab u Beogradu.</span><span class="ru">Берлинский кебаб в Белграде.</span></h1>
+      <p class="lede">
+        <span class="sr">Döner, dürüm, currywurst i hot dog kao na ulicama Berlina. Na Bulevaru kralja Aleksandra 210, svaki dan do 23h.</span>
+        <span class="ru">Дёнер, дюрюм, карривурст и хот-дог, как на улицах Берлина. Bulevar kralja Aleksandra 210, каждый день до 23:00.</span>
+      </p>
+      <div class="actions">
+        <a class="btn" href="https://wolt.com/sr/srb/belgrade/restaurant/og-kebab"><span class="sr">Naruči na Wolt-u</span><span class="ru">Заказать в Wolt</span></a>
+        <a class="btn btn-line" href="https://glovoapp.com/sr/rs/belgrade/stores/og-kebab-beg"><span class="sr">Naruči na Glovo-u</span><span class="ru">Заказать в Glovo</span></a>
+      </div>
+      <ul class="facts">
+        <li><b>12–23h</b> <span class="sr">svaki dan</span><span class="ru">каждый день</span></li>
+        <li><b>9,2/10</b> <span class="sr">na Wolt-u</span><span class="ru">в Wolt</span></li>
+        <li><b>Zvezdara</b></li>
+      </ul>
     </div>
-    <ul class="hero-info">
-      <li><b>12–23h</b> <span class="sr">svaki dan</span><span class="ru">каждый день</span></li>
-      <li><b>9,2/10</b> <span class="sr">na Wolt-u</span><span class="ru">в Wolt</span></li>
-      <li><b>Zvezdara</b> · Bul. kralja Aleksandra 210</li>
-    </ul>
-  </div>
-  <div class="hero-photo">
-    <img src="https://images.unsplash.com/photo-1699728088614-7d1d4277414b?w=1200&q=80&auto=format&fit=crop" alt="Döner kebab u ruci">
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1699728088614-7d1d4277414b?w=1100&q=80&auto=format&fit=crop" alt="Döner kebab u ruci">
+    </div>
   </div>
 </header>
-<div class="checks" aria-hidden="true"></div>
 
 <main>
-  <section id="meni">
+  <section id="meni" style="padding-top:0">
     <div class="wrap">
       <h2><span class="sr">Meni</span><span class="ru">Меню</span></h2>
-      <p class="intro"><span class="sr">Okvirne cene, preuzete sa PoštoPiće. Tačan meni dodajemo zajedno sa lokalom.</span><span class="ru">Ориентировочные цены с PoštoPiće. Точное меню добавим вместе с заведением.</span></p>
-      <div class="menu">
-        <div class="menu-group">
-          <h3>Kebab</h3>
-          <ul>
-            <li><span>Döner kebab M</span><span class="price">550 din</span></li>
-            <li><span>Dürüm kebab</span><span class="price">650 din</span></li>
-            <li><span><span class="sr">Kebab na tanjiru</span><span class="ru">Кебаб на тарелке</span></span><span class="price">690 din</span></li>
-          </ul>
-        </div>
-        <div class="menu-group">
-          <h3>Street food</h3>
-          <ul>
-            <li><span>Currywurst</span><span class="price">550 din</span></li>
-            <li><span>Hot dog</span><span class="price">— din</span></li>
-            <li><span><span class="sr">Pita sa višnjama</span><span class="ru">Пирог с вишней</span><span class="new"><span class="sr">novo</span><span class="ru">новое</span></span></span><span class="price">— din</span></li>
-          </ul>
-        </div>
-        <div class="menu-group">
-          <h3><span class="sr">Prilozi i sosevi</span><span class="ru">Гарниры и соусы</span></h3>
-          <ul>
-            <li><span><span class="sr">Pomfrit</span><span class="ru">Картошка фри</span></span><span class="price">250 din</span></li>
-            <li><span><span class="sr">Slatki pomfrit</span><span class="ru">Батат фри</span></span><span class="price">390 din</span></li>
-            <li><span><span class="sr">Sos od belog luka</span><span class="ru">Чесночный соус</span></span><span class="price">120 din</span></li>
-            <li><span><span class="sr">Ostali sosevi</span><span class="ru">Другие соусы</span></span><span class="price">90 din</span></li>
-          </ul>
+      <p class="intro"><span class="sr">Isti meni kao na vašem stolu.</span><span class="ru">То же меню, что у вас на столе.</span></p>
+      <div class="menu-card">
+        <div class="menu-inner">
+          <div class="menu-head"><svg aria-hidden="true"><use href="#stamp"/></svg></div>
+          <div>
+            <h3 class="cat">Kebab</h3>
+            <ul class="items">
+              <li><span>Döner kebab M/L<small><span class="sr">sa piletinom</span><span class="ru">с курицей</span></small></span><span class="p">550/750 RSD</span></li>
+              <li><span>Dürüm kebab<small><span class="sr">sa piletinom</span><span class="ru">с курицей</span></small></span><span class="p">650 RSD</span></li>
+              <li><span>Kebab na tanjiru<small><span class="sr">sa piletinom</span><span class="ru">с курицей</span></small><span class="ru-hint">Кебаб на тарелке</span></span><span class="p">690 RSD</span></li>
+            </ul>
+            <h3 class="cat">Street Specials</h3>
+            <ul class="items">
+              <li><span>Currywurst</span><span class="p">550/650 RSD</span></li>
+              <li><span>Hot dog</span><span class="p">590 RSD</span></li>
+            </ul>
+            <h3 class="cat"><span class="sr">Prilozi</span><span class="ru">Гарниры</span></h3>
+            <ul class="items">
+              <li><span>Pomfrit<span class="ru-hint">Картошка фри</span></span><span class="p">250 RSD</span></li>
+              <li><span>Slatki pomfrit<span class="ru-hint">Батат фри</span></span><span class="p">390 RSD</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="cat"><span class="sr">Sosevi</span><span class="ru">Соусы</span></h3>
+            <ul class="items">
+              <li><span>Beli luk sos<span class="ru-hint">Чесночный соус</span></span><span class="p">120 RSD</span></li>
+              <li><span>Tartuf majo sos<span class="ru-hint">Трюфельный майонез</span></span><span class="p">120 RSD</span></li>
+              <li><span>Sosevi<span class="ru-hint">Другие соусы</span></span><span class="p">90 RSD</span></li>
+            </ul>
+            <h3 class="cat"><span class="sr">Pića</span><span class="ru">Напитки</span></h3>
+            <ul class="items">
+              <li><span>Coca-Cola</span><span class="p">190 RSD</span></li>
+              <li><span>Voda<span class="ru-hint">Вода</span></span><span class="p">150 RSD</span></li>
+              <li><span>Fritz kola</span><span class="p">420 RSD</span></li>
+              <li><span>Sezonsko piće<span class="ru-hint">Сезонный напиток</span></span><span class="p">290 RSD</span></li>
+              <li><span>Pivo<span class="ru-hint">Пиво</span></span><span class="p">190 RSD</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -198,9 +219,8 @@
 
   <section style="padding-top:0">
     <div class="wrap">
-      <h2><span class="sr">Ocene</span><span class="ru">Оценки</span></h2>
       <div class="ratings">
-        <div class="rating"><b>9,2<small style="font-size:.5em">/10</small></b><span class="sr">Wolt, 200+ ocena</span><span class="ru">Wolt, 200+ оценок</span></div>
+        <div class="rating"><b>9,2/10</b><span class="sr">Wolt, 200+ ocena</span><span class="ru">Wolt, 200+ оценок</span></div>
         <div class="rating"><b>4,4</b><span class="sr">Google mape, 133 recenzije</span><span class="ru">Google Карты, 133 отзыва</span></div>
       </div>
     </div>
@@ -214,7 +234,7 @@
         <img loading="lazy" src="https://images.unsplash.com/photo-1583060095186-852adde6b819?w=600&q=80&auto=format&fit=crop" alt="Döner sa sosom">
         <img loading="lazy" src="https://images.unsplash.com/photo-1596995804697-27d11d43652e?w=600&q=80&auto=format&fit=crop" alt="Sečenje mesa sa ražnja">
       </div>
-      <p class="note"><span class="sr">Fotografije su ilustrativne (Unsplash). U pravoj verziji ovde idu fotografije lokala i hrane sa vašeg Instagrama.</span><span class="ru">Фото иллюстративные (Unsplash). В настоящей версии здесь будут ваши фото из Instagram.</span></p>
+      <p class="note"><span class="sr">Fotografije su ilustrativne (Unsplash). U pravoj verziji ovde idu vaše fotografije sa Instagrama.</span><span class="ru">Фото иллюстративные (Unsplash). В настоящей версии здесь будут ваши фото из Instagram.</span></p>
     </div>
   </section>
 
@@ -223,10 +243,10 @@
       <div>
         <h2><span class="sr">Gde smo</span><span class="ru">Где мы</span></h2>
         <address>Bulevar kralja Aleksandra 210<br>Zvezdara, Beograd</address>
-        <p class="hours-big"><span class="sr">Radimo <b>svaki dan od 12 do 23h</b>.</span><span class="ru">Работаем <b>каждый день с 12:00 до 23:00</b>.</span></p>
+        <p><span class="sr">Radimo <b>svaki dan od 12 do 23h</b>.</span><span class="ru">Работаем <b>каждый день с 12:00 до 23:00</b>.</span></p>
         <div class="actions" style="margin-top:18px">
           <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=OG+Kebab+Bulevar+kralja+Aleksandra+210+Beograd"><span class="sr">Kako do nas</span><span class="ru">Как добраться</span></a>
-          <a class="btn btn-light" style="box-shadow:inset 0 0 0 1.5px var(--ink-900)" href="https://www.instagram.com/og.kebab/">Instagram</a>
+          <a class="btn btn-line" href="https://www.instagram.com/og.kebab/">Instagram</a>
         </div>
       </div>
       <iframe class="map" title="Mapa: Bulevar kralja Aleksandra 210, Beograd" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -235,6 +255,7 @@
   </section>
 </main>
 
+<div class="checks" aria-hidden="true"></div>
 <footer>
   <div class="wrap">
     <span>OG Kebab Belgrade, Bulevar kralja Aleksandra 210</span>
