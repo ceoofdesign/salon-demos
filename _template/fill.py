@@ -16,6 +16,8 @@ if spec.get("after_hero_html"):
     html = html.replace('<main>\n', '<main>\n' + spec["after_hero_html"] + "\n", 1)
 for k, v in spec["vars"].items():
     html = html.replace("{{" + k + "}}", v)
+for a, b in spec.get("replace", []):
+    html = html.replace(a, b)
 left = re.findall(r"\{\{\w+\}\}", html)
 if left:
     sys.exit("unfilled: " + ", ".join(sorted(set(left))))
