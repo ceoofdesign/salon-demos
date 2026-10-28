@@ -102,26 +102,18 @@
   .callbar .btn{width:100%;box-shadow:0 0 0 1px rgba(255,255,255,.15),0 12px 28px rgba(27,30,35,.28)}
 
   
-  .week{margin:0 0 80px}
-  .week-card{background:var(--color-bg-raised);border-radius:var(--radius);padding:28px 22px;box-shadow:0 0 0 1px rgba(31,36,35,.06)}
-  .week-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:20px}
-  .week-head h2{margin:0;font-size:clamp(1.75rem,3.4vw,2.25rem)}
-  .week-head p{margin:0;color:var(--color-text-muted);font-size:.9375rem}
-  .wk{margin:0;padding:0;list-style:none;display:grid;gap:8px}
-  .wk li{display:grid;grid-template-columns:44px 1fr;align-items:center;gap:12px}
-  .wk-day{font-weight:600;font-size:.875rem;color:var(--color-text-muted)}
-  .wk li.today .wk-day{color:var(--color-accent)}
-  .wk-track{position:relative;height:36px;border-radius:10px;background:var(--n-50)}
-  .wk-bar{position:absolute;top:0;bottom:0;left:calc(var(--s)/12*100%);width:calc((var(--e) - var(--s))/12*100%);border-radius:10px;background:var(--n-100);display:flex;align-items:center;padding:0 12px;font-weight:600;font-size:.875rem;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .wk-bar.pm{background:var(--color-accent-soft);color:var(--color-accent)}
-  .wk li.today .wk-bar{box-shadow:inset 0 0 0 2px var(--color-accent)}
-  .wk-off{display:flex;align-items:center;height:100%;padding:0 12px;font-size:.875rem;color:var(--color-text-muted)}
-  .wk-scale{display:grid;grid-template-columns:44px 1fr;gap:12px;margin-top:8px;font-size:.75rem;color:var(--color-text-muted);font-variant-numeric:tabular-nums}
-  .wk-scale div{display:flex;justify-content:space-between}
-  .legend{display:flex;gap:16px;margin-top:16px;font-size:.8125rem;color:var(--color-text-muted)}
-  .legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--n-100)}
-  .legend .pm::before{background:var(--color-accent-soft);box-shadow:inset 0 0 0 1px var(--color-accent)}
-  @media (min-width:860px){.week-card{padding:36px 40px}}
+  .week{padding:0 0 80px}
+  .shifts{display:grid;gap:16px;grid-template-columns:1fr;margin-top:20px}
+  .shift{background:var(--color-bg-raised);border-radius:var(--radius);padding:24px;box-shadow:0 0 0 1px rgba(31,36,35,.06)}
+  .shift.pm{background:var(--color-accent-soft)}
+  .shift-time{margin:0 0 8px;font:var(--display-weight) 1.5rem/1.2 var(--display)}
+  .shift ul{margin:0;padding:0;list-style:none}
+  .shift li{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid rgba(31,36,35,.08);font-variant-numeric:tabular-nums}
+  .shift li.today{font-weight:700}
+  .shift li.today span:first-child::after{content:" · danas";color:var(--color-accent)}
+  .shift-note{margin:12px 0 0;color:var(--color-accent);font-weight:600;font-size:.9375rem}
+  .closed{margin:14px 0 0;color:var(--color-text-muted)}
+  @media (min-width:860px){.shifts{grid-template-columns:1fr 1fr;align-items:start}}
 
   @media (min-width:860px){
     .hero{padding:44px 0 104px}
@@ -165,22 +157,29 @@
 </header>
 
 <main>
-  <section class="week" aria-label="Smene">
+  <section class="week" aria-label="Kada radimo">
     <div class="wrap">
-      <div class="week-card">
-        <div class="week-head"><h2>Kada smo tu</h2><p>Sreda i petak posle podne, za termine posle posla.</p></div>
-        <ul class="wk" id="week">
-        <li data-d="1"><span class="wk-day">Pon</span><span class="wk-track"><span class="wk-bar" style="--s:1;--e:8"><span>9–16</span></span></span></li>
-        <li data-d="2"><span class="wk-day">Uto</span><span class="wk-track"><span class="wk-bar" style="--s:1;--e:8"><span>9–16</span></span></span></li>
-        <li data-d="3"><span class="wk-day">Sre</span><span class="wk-track"><span class="wk-bar pm" style="--s:5;--e:12"><span>13–20</span></span></span></li>
-        <li data-d="4"><span class="wk-day">Čet</span><span class="wk-track"><span class="wk-bar" style="--s:1;--e:8"><span>9–16</span></span></span></li>
-        <li data-d="5"><span class="wk-day">Pet</span><span class="wk-track"><span class="wk-bar pm" style="--s:5;--e:12"><span>13–20</span></span></span></li>
-        <li data-d="6"><span class="wk-day">Sub</span><span class="wk-track"><span class="wk-bar" style="--s:1;--e:7"><span>9–15</span></span></span></li>
-        <li data-d="0"><span class="wk-day">Ned</span><span class="wk-track"><span class="wk-off">zatvoreno</span></span></li>
-        </ul>
-        <div class="wk-scale" aria-hidden="true"><span></span><div><span>8h</span><span>11h</span><span>14h</span><span>17h</span><span>20h</span></div></div>
-        <div class="legend"><span>pre podne</span><span class="pm">posle podne</span></div>
+      <h2>Kada radimo</h2>
+      <div class="shifts">
+        <div class="shift">
+          <p class="shift-time">Pre podne</p>
+          <ul>
+            <li data-d="1"><span>Ponedeljak</span><span>9–16</span></li>
+            <li data-d="2"><span>Utorak</span><span>9–16</span></li>
+            <li data-d="4"><span>Četvrtak</span><span>9–16</span></li>
+            <li data-d="6"><span>Subota</span><span>9–15</span></li>
+          </ul>
+        </div>
+        <div class="shift pm">
+          <p class="shift-time">Posle podne</p>
+          <ul>
+            <li data-d="3"><span>Sreda</span><span>13–20</span></li>
+            <li data-d="5"><span>Petak</span><span>13–20</span></li>
+          </ul>
+          <p class="shift-note">Zgodno za termin posle posla.</p>
+        </div>
       </div>
+      <p class="closed">Nedeljom ne radimo.</p>
     </div>
   </section>
   <section id="usluge" style="padding-top:0">
@@ -255,7 +254,7 @@
   try{
     var w=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Belgrade',weekday:'short'}).format(new Date());
     var d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(w);
-    document.querySelectorAll('#hours li[data-d="'+d+'"],#week li[data-d="'+d+'"]').forEach(function(r){r.classList.add('today')});
+    document.querySelectorAll('#hours li[data-d="'+d+'"],.shifts li[data-d="'+d+'"]').forEach(function(r){r.classList.add('today')});
   }catch(e){}
 </script>
 </body>
